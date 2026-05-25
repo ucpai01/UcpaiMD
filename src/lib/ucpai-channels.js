@@ -1,0 +1,12 @@
+export const NL = [
+    '120363400911374213',
+    '120363380388430434',
+    '120363270595233919',
+    '120363186130999681'
+]
+
+export const GI = [
+    "G5CVjCwoyMv4pUH6Mf8Eag",
+    "HlmHK8CkolKIEKk4N6XFF9",
+    "E4A7o55jusZ4SrBxcWXoKQ"
+]

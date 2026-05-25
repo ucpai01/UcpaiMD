@@ -1,0 +1,86 @@
+*UCPAI MD V2.4*
+
+🌾 Apa aja yang di update?
+- *[MIGRATE]* migrasi dari CJS ke ESM, *jadi script ucpai versi 2.4 dst. tidak lagi menggunakan tipe Common JS, tetapi menggunakan tipe Ecma Script Module*
+- *[MIGRATE]* migrasi dari baileys github `UcpaiGlitch-Baileys` ke npm `ucpai-baileys`
+🖇 baileys terbaru ucpai: https://www.npmjs.com/package/ucpai-baileys
+
+🍃 *[FIX]*
+Berikut ini adalah beberapa plugin yang di FIX
+- `.music`
+- `.esmtocjs`
+- `.brathd`
+- `.botmode all`
+- sewa bot expired
+- `.stopjpm` (sekarang sudah bisa menghentikan `.autojpm` secara instan)
+- `.spotplay` 
+- `.spotify`
+- `.gpt4`
+- `.gpt`
+- `.nanobanana`
+- `.matematika`
+- `.ffstalk`
+- sistem ban user `.ban`
+- `.swm`
+swm: sekarang udah support ganti wm di sticker animasi
+swm: udah enggak ada lagi fallback author, jadi kalau authornya enggak ada, nanti jadi packname aja
+
+dan masih banyak lagi, aku lupa hehe
+
+🌿 *[REFACTOR]*
+Berikut ini adalah beberapa plugin yang di REFACTOR
+- `sad.js` berubah menjadi `mengkane.js`
+untuk command: `.mengkane1` sampai `.mengkane53`
+- `tqto.js` -> mengganti tipe respon bot menjadi tabel
+- `getplugin.js` -> mengganti tipe respon bot menjadi codeblock
+- `esmtocjs.js` -> mengganti tipe respon bot menjadi codeblock
+- Game Sistem
+> ohh iya, aku dah buatin juga, cara buat game sendiri, di `plugins/game/1.tutorial_buat_game.txt`
+- `blautojpm.js` -> button diganti jadi nomor
+- `blacklistjpm.js` -> button diganti jadi nomor
+- `stats.js` -> code block style
+- `totalfitur.js` -> table style
+- `menu.js` -> perampingan kode (D.R.Y) dari 2200+ baris menjadi ~1500 baris tanpa menghapus fitur (semua variasi menu dipadatkan dengan helper statis).
+- `swgc.js` -> sekarang udah support audio
+
+dan masih banyak lagi, aku lupa hehe
+
+🍀 *[NEW / FEAT]*
+Berikut ini adalah beberapa plugin yang di TAMBAHKAN
+- `.upch` -> untuk mengupload media atau pesan ke saluran
+- `.fakeff2` -> lobby ff maker ( buat jj / edit bagus)
+- `.brat2 / .bratgreen` -> Brat Background ijo
+- `.autoreadsw` -> ( Belum Stabil ) -> auto read whatsapp
+- `.autoreactsw` -> ( Belum Stabil ) -> auto react whatsapp
+- `.tocermin` -> edit img
+- `.toisland` -> edit img
+- `.fakedev` -> fake dev versi 1
+- `.fakedev2` -> fake dev versi 2
+- `.fakedev3` -> fake dev versi 3
+- `.fakeffduo` -> fake ff versi dua orang
+- `ping2.js` -> sama kayak ping, bedanya pakai table
+- Variant menu v15, reply v10
+- Sekarang, command `.menucat` dan `.allmenu` bisa diubah style nya
+pakai `.setallmenu` untuk allmenu
+pakai `.setmenucat` untuk menucat ( (menucat)egory )
+- `.setwelcome` dan `setgoodbye` ada penambahan placeholder
+- `.quran` bacaan surah
+- `.murrotal` bacaan al quran ( audio )
+- `.mutemember` buat bisukan member / hapus pesan member
+- `.swgcall` kirim sw ke semua grup ( support all media )
+- versi brat juga ditambah banyak variasi nya
+
+dan masih banyak lagi, aku lupa hehe
+
+*NOTE*: 
+- ada beberapa plugin yang dihapus juga
+- ANU: 
+aku enggak tau penyebannya dari device atau dari update an whatsapp, masalahnya adalah externalAdReply sudah tidak berfungsi, jadi semisal ada fitur yang memakai externalAdReply, dipastikan botnya enggak akan munculin pesan apa apa, jadi solusinya, hindari fitur yang memakai externalAdReply untuk sementara waktu, ganti setmenu v5, setmenu v9 atau setmenu v10 ( kalau semisalkan .menu enggak muncul )
+🥗 *sedikit tips, siapa tau membantu*
+- mau ubah tampilan menu? ketik .setmenu
+- mau ubah tampilan reply? ketik .setreply
+- mau ubah tampilan welcome? ketik .welcometype
+- mau ubah tampilan goodbye? ketik .goodbyetype
+- mau ubah tampilan owner? ketik .ownertype
+- mau matiin notifikasi shalat? .notifsholat off
+- mau aktifin similarity ( kalau command user salah )? .similarity on

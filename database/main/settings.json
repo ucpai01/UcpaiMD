@@ -1,0 +1,256 @@
+{
+  "selfMode": false,
+  "ownerNumbers": [
+    "6281234567890",
+    "6281234567890"
+  ],
+  "ownerType": 3,
+  "welcomeType": 5,
+  "replyVariant": 6,
+  "menuVariant": 15,
+  "botAfk": {
+    "active": false
+  },
+  "cmdVn": false,
+  "autoSholatKota": {
+    "id": "1301",
+    "nama": "KOTA JAKARTA"
+  },
+  "onlyGc": false,
+  "onlyPc": false,
+  "giveaways": {
+    "GA-MGKQB4": {
+      "giveawayId": "GA-MGKQB4",
+      "chatId": "120363423808062915@g.us",
+      "title": "start Ini Contoh",
+      "prizeName": "Test Test",
+      "prizeDetails": "Akun Free Fire: Ppppp",
+      "description": "Ini Deskripsi",
+      "winners": 2,
+      "endTime": 1770775036179,
+      "creatorId": "6283106414327@s.whatsapp.net",
+      "adminJid": "6283106414327@s.whatsapp.net",
+      "participants": [
+        "6283106414327@s.whatsapp.net",
+        "628979985621@s.whatsapp.net"
+      ],
+      "ended": true,
+      "createdAt": 1770771436179,
+      "endedAt": 1770771592193,
+      "winnerList": [
+        "628979985621@s.whatsapp.net",
+        "6283106414327@s.whatsapp.net"
+      ]
+    }
+  },
+  "botMode": "public",
+  "audioMenu": false,
+  "transactionSessions": {},
+  "premiumUsers": [
+    "155753415500028",
+    "281157149155422"
+  ],
+  "similarity": false,
+  "botRules": null,
+  "goodbyeType": 5,
+  "onlyAdmin": false,
+  "selfAdmin": false,
+  "publicAdmin": false,
+  "_lastEnergiDefault": 99999,
+  "_lastEnergiPremium": 99999999,
+  "lastLimitReset": "2026-03-19T17:00:00.042Z",
+  "onlyThisGroup": null,
+  "autoJpm": {
+    "enabled": false,
+    "intervalMs": 900000,
+    "message": {
+      "text": "Autojpm on 1m",
+      "media": {
+        "type": "video",
+        "path": "C:\\Users\\FauzanAPP\\Downloads\\REVIEWBOT\\storage\\autojpm\\autojpm_1774156973648.mp4",
+        "mimetype": "video/mp4",
+        "fileName": "autojpm_1774156973648.mp4"
+      }
+    },
+    "lastRun": 1774157878673,
+    "nextRun": 1774158778673
+  },
+  "jedaJpm": 10000,
+  "globalCustomReplies": [],
+  "panelCreateLastUsed": 1775377733441,
+  "autoJoinGc": false,
+  "autoSholat": false,
+  "errorLog": [
+    {
+      "cmd": "unknown",
+      "err": "Cannot read properties of null (reading 'includes')",
+      "at": 1776490625232
+    },
+    {
+      "cmd": "unknown",
+      "err": "rate-overlimit",
+      "at": 1776315815854
+    },
+    {
+      "cmd": "unknown",
+      "err": "target.replace is not a function",
+      "at": 1776300330842
+    },
+    {
+      "cmd": "unknown",
+      "err": "targetNumber.startsWith is not a function",
+      "at": 1776300307149
+    },
+    {
+      "cmd": "unknown",
+      "err": "Cannot read properties of undefined (reading 'replace')",
+      "at": 1776049291248
+    },
+    {
+      "cmd": "unknown",
+      "err": "Cannot read properties of undefined (reading 'replace')",
+      "at": 1776049270730
+    },
+    {
+      "cmd": "unknown",
+      "err": "Cannot read properties of undefined (reading 'replace')",
+      "at": 1776048617143
+    },
+    {
+      "cmd": "unknown",
+      "err": "Cannot read properties of undefined (reading 'replace')",
+      "at": 1776046690470
+    },
+    {
+      "cmd": "unknown",
+      "err": "Cannot read properties of undefined (reading 'replace')",
+      "at": 1776046647411
+    },
+    {
+      "cmd": "unknown",
+      "err": "Cannot read properties of undefined (reading 'replace')",
+      "at": 1776046581464
+    },
+    {
+      "cmd": "unknown",
+      "err": "The \"path\" argument must be of type string or an instance of Buffer or URL. Received undefined",
+      "at": 1775963414780
+    },
+    {
+      "cmd": "unknown",
+      "err": "import(\"moment-timezone\") is not a function",
+      "at": 1775887100623
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775887043744
+    },
+    {
+      "cmd": "unknown",
+      "err": "normalizeMessageContent is not a function",
+      "at": 1775882757250
+    },
+    {
+      "cmd": "unknown",
+      "err": "normalizeMessageContent is not a function",
+      "at": 1775882730900
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isPartner is not a function",
+      "at": 1775644580792
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isPartner is not a function",
+      "at": 1775644579720
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isPartner is not a function",
+      "at": 1775644579583
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isPartner is not a function",
+      "at": 1775644579542
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isPartner is not a function",
+      "at": 1775644579164
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isPartner is not a function",
+      "at": 1775644579110
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775644442687
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775644442648
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775644314120
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775644311483
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775644309653
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775644309358
+    },
+    {
+      "cmd": "unknown",
+      "err": "config.isOwner is not a function",
+      "at": 1775643937539
+    },
+    {
+      "cmd": "unknown",
+      "err": "fs.readFileSync is not a function",
+      "at": 1775554384227
+    },
+    {
+      "cmd": "unknown",
+      "err": "fs.readFileSync is not a function",
+      "at": 1775554332751
+    }
+  ],
+  "jpmBlacklist": [
+    "120363403738794364@g.us"
+  ],
+  "bannedUsers": [],
+  "allmenuVariant": 1,
+  "menucatVariant": 1,
+  "notifMakan": {
+    "6283106414327@s.whatsapp.net_120363409788558969@g.us": {
+      "sender": "6283106414327@s.whatsapp.net",
+      "chatJid": "120363409788558969@g.us",
+      "jadwal": [
+        "16:23"
+      ],
+      "menu": "",
+      "enabled": false,
+      "lastSent": {
+        "16:23_2026-4-18": true
+      },
+      "createdAt": 1776503747898
+    }
+  }
+}
