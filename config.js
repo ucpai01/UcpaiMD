@@ -251,12 +251,12 @@ const config = {
         lolhuman: 'APIKey-Milik-Bot-UcpaiMD(mr.ucup,mr.ucup,mr.ucup,mr.ucup)',
         // kalian bisa daftar di https://api.neoxr.eu, lalu ambil apikeynya
         neoxr: 'Milik-Bot-UcpaiMD',
-        fgsi: '',
-        google: '',
-        groq: '',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
-        betabotz: '',
+        fgsi: 'fgsiapi-20c1605c-6d',
+        google: 'AIzaSyAS-KiW0SrwiYKwexeBcGPijBVHFg2R_vo',
+        groq: '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',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
+        betabotz: 'Btz-67YfP',
         // kalian bisa daftar di https://covenant.sbs, dan ambil apikeynya
-        covenant: ''
+        covenant: 'cov_live_bb660c9e5f735e46d808b7ae362914cfe35c2936739ee2b2'
     }
 }
 
