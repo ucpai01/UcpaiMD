@@ -11,11 +11,11 @@ const config = {
 
     owner: {
         name: 'mr.ucup',                    // Nama owner
-        number: ['62xxxxxxxxx']         // Format: 628xxx (tanpa + atau 0)
+        number: ['6287892614294']         // Format: 628xxx (tanpa + atau 0)
     },
 
     session: {
-        pairingNumber: '62xxxxxxxxx',   // Nomor WA yang akan di-pair
+        pairingNumber: '6287892614294',   // Nomor WA yang akan di-pair
         usePairingCode: true // true = Pairing Code, false = QR Code
     },
 
@@ -39,19 +39,19 @@ const config = {
 
     store: {
         payment: [
-            { name: 'Dana', number: '62xxxxxxxxx', holder: 'Nama Pemilik' },
-            { name: 'OVO', number: '62xxxxxxxxx', holder: 'Nama Pemilik' },
-            { name: 'GoPay', number: '62xxxxxxxxx', holder: 'Nama Pemilik' },
-            { name: 'ShopeePay', number: '62xxxxxxxxx', holder: 'Nama Pemilik' }
+            { name: 'Dana', number: '62xxxxxxxxx', holder: 'mr.ucup' },
+            { name: 'OVO', number: '62xxxxxxxxx', holder: 'mr.ucup' },
+            { name: 'GoPay', number: '62xxxxxxxxx', holder: 'mr.ucup' },
+            { name: 'ShopeePay', number: '62xxxxxxxxx', holder: 'mr.ucup' }
         ],
         qris: 'https://files.cloudkuimages.guru/images/51a2c5186302.jpg'
     },
 
     donasi: {
         payment: [
-            { name: 'Dana', number: '08xxxxxxxxxx', holder: 'Nama Owner' },
-            { name: 'GoPay', number: '08xxxxxxxxxx', holder: 'Nama Owner' },
-            { name: 'OVO', number: '08xxxxxxxxxx', holder: 'Nama Owner' }
+            { name: 'Dana', number: '08xxxxxxxxxx', holder: 'mr.ucup' },
+            { name: 'GoPay', number: '08xxxxxxxxxx', holder: 'mr.ucup' },
+            { name: 'OVO', number: '08xxxxxxxxxx', holder: 'mr.ucup' }
         ],
         links: [
             { name: 'Saweria', url: 'saweria.co/username' },
