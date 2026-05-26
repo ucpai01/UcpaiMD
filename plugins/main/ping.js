@@ -5,6 +5,7 @@ async function _getCanvas() {
 }
 import { performance } from "perf_hooks";
 import os from "os";
+import fs from "fs";
 import { execSync } from "child_process";
 import config from "../../config.js";
 import { getDatabase } from "../../src/lib/ucpai-database.js";
@@ -501,7 +502,7 @@ async function getNetwork() {
       tx = 0;
     try {
       if (process.platform === "linux") {
-        const { default: nd } = await import("fs").readFileSync(
+        const nd = fs.readFileSync(
           "/proc/net/dev",
           "utf8",
         );
@@ -701,7 +702,7 @@ async function handler(m, { sock }) {
     const canvasTime = Math.round(performance.now() - canvasStart);
     const totalExec = Math.round(performance.now() - execStart);
 
-    const saluranId = config.saluran?.id || "120363208449943317@newsletter";
+    const saluranId = config.saluran?.id || "120363426403323903@newsletter";
     const saluranName = config.saluran?.name || config.bot?.name || "Ucpai-AI";
     const ramPct = ((s.ramUsed / s.ramTotal) * 100).toFixed(1);
     const diskPct =

@@ -296,7 +296,7 @@ async function handler(m, { sock, args: rawArgs }) {
             const giveawayText = buildGiveawayMessage(giveaway, 0, prefix)
             const imageBuffer = getGiveawayImage()
             
-            const saluranId = botConfig.saluran?.id || '120363208449943317@newsletter'
+            const saluranId = botConfig.saluran?.id || '120363426403323903@newsletter'
             const saluranName = botConfig.saluran?.name || botConfig.bot?.name || 'Ucpai-AI'
             
             const contextInfo = {

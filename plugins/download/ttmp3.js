@@ -1,6 +1,7 @@
 import ttdown from '../../src/scraper/tiktok.js'
 import config from '../../config.js'
 import axios from 'axios'
+import fs from 'fs'
 import ffmpeg from 'fluent-ffmpeg'
 import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
 ffmpeg.setFfmpegPath(ffmpegInstaller.path)
@@ -82,8 +83,8 @@ async function handler(m, { sock }) {
 
     // cleanup
     setTimeout(async () => {
-      if (await import('fs').existsSync(result.file)) {
-        await import('fs').unlinkSync(result.file)
+      if (fs.existsSync(result.file)) {
+        fs.unlinkSync(result.file)
       }
     }, 5000)
 

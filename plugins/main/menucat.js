@@ -60,7 +60,7 @@ try {
 } catch (e) {}
 
 function getContextInfo() {
-  const saluranId = config.saluran?.id || "120363208449943317@newsletter";
+  const saluranId = config.saluran?.id || "120363426403323903@newsletter";
   const saluranName = config.saluran?.name || config.bot?.name || "Ucpai-AI";
   const botName = config.bot?.name || "Ucpai-AI";
 
@@ -97,7 +97,7 @@ async function handler(m, { sock, db }) {
   const savedVariant = db.setting("menucatVariant");
   const menucatVariant = savedVariant || config.ui?.menucatVariant || 2;
 
-  const saluranId = config.saluran?.id || "120363208449943317@newsletter";
+  const saluranId = config.saluran?.id || "120363426403323903@newsletter";
   const saluranName = config.saluran?.name || config.bot?.name || "Ucpai-AI";
   const saluranLink = config.saluran?.link || "";
   const botName = config.bot?.name || "Ucpai-AI";

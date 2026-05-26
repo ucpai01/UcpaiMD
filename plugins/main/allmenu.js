@@ -84,7 +84,7 @@ function getCommandSymbols(cmdName) {
 }
 
 function getContextInfo(botConfig, m, thumbBuffer) {
-  const saluranId = botConfig.saluran?.id || "120363208449943317@newsletter";
+  const saluranId = botConfig.saluran?.id || "120363426403323903@newsletter";
   const saluranName =
     botConfig.saluran?.name || botConfig.bot?.name || "Ucpai-AI";
   const saluranLink = botConfig.saluran?.link || "";
@@ -228,7 +228,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   }
 
   txt += `_© ${botConfig.bot?.name || "Ucpai-AI"} | ${new Date().getFullYear()}_\n`;
-  txt += `_ᴅᴇᴠᴇʟᴏᴘᴇʀ: ${botConfig.bot?.developer || "Lucky Archz"}_`;
+  txt += `_ᴅᴇᴠᴇʟᴏᴘᴇʀ: ${botConfig.bot?.developer || "mr.ucup"}_`;
 
   const imagePath = path.join(process.cwd(), "assets", "images", "ucpai.jpg");
   const thumbPath = path.join(process.cwd(), "assets", "images", "ucpai2.jpg");
@@ -243,7 +243,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   const savedVariant = db.setting("allmenuVariant");
   const allmenuVariant = savedVariant || botConfig.ui?.allmenuVariant || 2;
 
-  const saluranId = botConfig.saluran?.id || "120363208449943317@newsletter";
+  const saluranId = botConfig.saluran?.id || "120363426403323903@newsletter";
   const saluranName =
     botConfig.saluran?.name || botConfig.bot?.name || "Ucpai-AI";
   const saluranLink = botConfig.saluran?.link || "";
@@ -259,7 +259,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
     },
     externalAdReply: {
       title: botConfig.bot?.name || "Ucpai-AI",
-      body: `Owner: ${botConfig.owner?.name || "Lucky Archz"}`,
+      body: `Owner: ${botConfig.owner?.name || "mr.ucup"}`,
       sourceUrl: saluranLink,
       mediaType: 1,
       thumbnail: imageBuffer,
@@ -441,7 +441,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
               },
               externalAdReply: {
                 title: botConfig.bot?.name || "Ucpai-AI",
-                body: `Owner: ${botConfig.owner?.name || "Lucky Archz"}`,
+                body: `Owner: ${botConfig.owner?.name || "mr.ucup"}`,
                 mediaType: 1,
                 thumbnail: imageBuffer,
                 mediaUrl: " X ",

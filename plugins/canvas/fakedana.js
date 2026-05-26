@@ -1,6 +1,7 @@
 import { Canvas, loadImage, FontLibrary } from 'skia-canvas'
+import path from 'path'
 import te from '../../src/lib/ucpai-error.js'
-FontLibrary.use('CartoonVibes', process.cwd() + './assets/fonts/Epep.ttf')
+FontLibrary.use('CartoonVibes', path.join(process.cwd(), 'assets/fonts/Epep.ttf'))
 
 async function generate(angka) {
   const bg = await loadImage('https://raw.githubusercontent.com/uploader762/dat3/main/uploads/9c18e0-1772932032348.jpg')

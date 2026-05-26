@@ -133,7 +133,7 @@ async function handleCommand(m, sock) {
                             forwardingScore: 9999,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363208449943317@newsletter',
+                                newsletterJid: '120363426403323903@newsletter',
                                 newsletterName: 'Ucpai Case System',
                                 serverMessageId: 127
                             }
@@ -215,7 +215,7 @@ async function handleCommand(m, sock) {
                             forwardingScore: 9999,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363208449943317@newsletter',
+                                newsletterJid: '120363426403323903@newsletter',
                                 newsletterName: 'Ucpai Plugin System',
                                 serverMessageId: 127
                             }

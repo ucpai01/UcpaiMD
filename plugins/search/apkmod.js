@@ -1,5 +1,6 @@
 import axios from 'axios'
 import config from '../../config.js'
+import fs from 'fs'
 import te from '../../src/lib/ucpai-error.js'
 const pluginConfig = {
     name: 'apkmod',
@@ -45,7 +46,7 @@ async function handler(m, { sock }) {
         
         const apps = data.data.slice(0, 15)
         
-        const saluranId = config.saluran?.id || '120363208449943317@newsletter'
+        const saluranId = config.saluran?.id || '120363426403323903@newsletter'
         const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
         
         let caption = `📱 *Hasil pencarian dari ${text}*\n\n`
@@ -71,7 +72,7 @@ async function handler(m, { sock }) {
         
         m.react('✅')
         
-        await sock.sendButton(m.chat, await import('fs').readFileSync('./assets/images/ucpai.jpg'), caption, m, {
+        await sock.sendButton(m.chat, fs.readFileSync('./assets/images/ucpai.jpg'), caption, m, {
             buttons: [{
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({

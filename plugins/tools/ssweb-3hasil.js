@@ -135,7 +135,7 @@ async function handler(m, { sock }) {
         } catch (albumErr) {
             console.log('[SSWeb3] Album failed, sending individually:', albumErr.message)
             
-            const saluranId = config.saluran?.id || '120363208449943317@newsletter'
+            const saluranId = config.saluran?.id || '120363426403323903@newsletter'
             const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
             
             for (const content of mediaList) {

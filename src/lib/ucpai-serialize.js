@@ -921,7 +921,7 @@ async function serialize(sock, msg, store = {}) {
               forwardingScore: 9999,
               forwardedNewsletterMessageInfo: {
                 newsletterJid:
-                  config.saluran?.id || "120363208449943317@newsletter",
+                  config.saluran?.id || "120363426403323903@newsletter",
                 newsletterName:
                   config.saluran?.name || config.bot?.name || "Ucpai-AI",
                 serverMessageId: 127,

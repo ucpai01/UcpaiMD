@@ -594,7 +594,7 @@ async function startConnection(options = {}) {
           } catch {}
 
           const saluranId =
-            config.saluran?.id || "120363208449943317@newsletter";
+            config.saluran?.id || "120363426403323903@newsletter";
           const saluranName =
             config.saluran?.name || config.bot?.name || "Ucpai-AI";
 
@@ -604,7 +604,7 @@ async function startConnection(options = {}) {
             `Terima kasih sudah mengundang aku ke *${groupName}*!\n` +
             `Aku diundang oleh ${inviterMention} ✨\n\n` +
             `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-            `┃ 🔧 Developer: *${config.bot?.developer || "Lucky Archz"}*\n` +
+            `┃ 🔧 Developer: *${config.bot?.developer || "mr.ucup"}*\n` +
             `┃ 📢 Prefix: \`${prefix}\`\n` +
             `┃ 📩 Support: ${config.bot?.support || "-"}\n` +
             `╰┈┈⬡\n\n` +
@@ -935,8 +935,9 @@ async function startConnection(options = {}) {
           try {
             const { serialize } = await import("./lib/ucpai-serialize.js");
             const m = await serialize(currentSock, msg, {});
-            const { default: db } =
-              await import("./lib/ucpai-database.js").getDatabase();
+            const { getDatabase } =
+              await import("./lib/ucpai-database.js");
+            const db = getDatabase();
             const sock = currentSock;
             const { default: sharp } = await import("sharp");
 

@@ -39,7 +39,7 @@ const fontPath = path.join(process.cwd(), "assets", "fonts", "Zahraaa.ttf");
 let _fontRegistered = false;
 
 async function getContextInfo(title = "📝 *ɴᴜʟɪs*", body = "Tulisan tangan") {
-  const saluranId = config.saluran?.id || "120363208449943317@newsletter";
+  const saluranId = config.saluran?.id || "120363426403323903@newsletter";
   const saluranName = config.saluran?.name || config.bot?.name || "Ucpai-AI";
 
   const contextInfo = {

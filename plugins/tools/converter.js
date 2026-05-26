@@ -96,7 +96,7 @@ async function handler(m, { sock }) {
             return m.reply(`❌ *ɢᴀɢᴀʟ ᴄᴏɴᴠᴇʀᴛ*\n\n> ${result.error}`)
         }
         
-        const saluranId = config.saluran?.id || '120363208449943317@newsletter'
+        const saluranId = config.saluran?.id || '120363426403323903@newsletter'
         const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
         
         await sock.sendMessage(m.chat, {

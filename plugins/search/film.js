@@ -26,7 +26,7 @@ try {
 } catch {}
 
 async function getContextInfo(title, body, thumbnail) {
-    const saluranId = config.saluran?.id || '120363208449943317@newsletter'
+    const saluranId = config.saluran?.id || '120363426403323903@newsletter'
     const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
 
     const ctx = {
@@ -108,7 +108,7 @@ async function handler(m, { sock }) {
             id: `${m.prefix}filmget ${f.url}`
         }))
         
-        await sock.sendButton(m.chat, await import('fs').readFileSync('./assets/images/ucpai.jpg'), text, m, {
+        await sock.sendButton(m.chat, fs.readFileSync('./assets/images/ucpai.jpg'), text, m, {
             buttons: [{
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({

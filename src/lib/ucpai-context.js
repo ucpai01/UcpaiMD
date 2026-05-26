@@ -57,7 +57,7 @@ function getRandomPraise() {
 }
 
 function getGameContextInfo(title = '🎮 UCPAI GAMES', body = 'Have fun playing!') {
-    const saluranId = config.saluran?.id || '120363208449943317@newsletter'
+    const saluranId = config.saluran?.id || '120363426403323903@newsletter'
     const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
     
     const contextInfo = {
@@ -85,7 +85,7 @@ function getGameContextInfo(title = '🎮 UCPAI GAMES', body = 'Have fun playing
 }
 
 function getWinnerContextInfo(title = '🏆 WINNER!', body = 'Selamat kamu menang!') {
-    const saluranId = config.saluran?.id || '120363208449943317@newsletter'
+    const saluranId = config.saluran?.id || '120363426403323903@newsletter'
     const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
     
     const contextInfo = {
@@ -114,7 +114,7 @@ function getWinnerContextInfo(title = '🏆 WINNER!', body = 'Selamat kamu menan
 }
 
 function getRpgContextInfo(title = '⚔️ UCPAI RPG', body = 'Adventure awaits!') {
-    const saluranId = config.saluran?.id || '120363208449943317@newsletter'
+    const saluranId = config.saluran?.id || '120363426403323903@newsletter'
     const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
     
     const contextInfo = {

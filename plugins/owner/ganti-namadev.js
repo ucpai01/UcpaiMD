@@ -7,7 +7,7 @@ const pluginConfig = {
     category: 'owner',
     description: 'Ganti nama developer di config.js',
     usage: '.ganti-namadev <nama baru>',
-    example: '.ganti-namadev Lucky Archz',
+    example: '.ganti-namadev mr.ucup',
     isOwner: true,
     isPremium: false,
     isGroup: false,

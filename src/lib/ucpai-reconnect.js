@@ -1,6 +1,6 @@
 /**
  * Credits & Thanks to
- * Developer = Lucky Archz ( mr.ucup )
+ * Developer = mr.ucup
  * Lead owner = HyuuSATAN
  * Owner = mr.ucup
  * Designer = mr.ucupz

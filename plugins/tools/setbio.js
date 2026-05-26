@@ -4,7 +4,7 @@ const pluginConfig = {
     category: 'tools',
     description: 'Mengubah bio/status bot',
     usage: '.setbio <bio baru>',
-    example: '.setbio Bot WhatsApp by Lucky Archz',
+    example: '.setbio Bot WhatsApp by mr.ucup',
     isOwner: true,
     isPremium: false,
     isGroup: false,

@@ -1,1 +1,6 @@
-node_modules/\nsessions/\n.temp/\npackage-lock.json
+node_modules/
+sessions/
+storage/
+.temp/
+package-lock.json
+*.log

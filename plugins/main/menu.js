@@ -389,7 +389,7 @@ function getContextInfo(
   thumbBuffer,
   renderLargerThumbnail = false,
 ) {
-  const saluranId = botConfig.saluran?.id || "120363208449943317@newsletter";
+  const saluranId = botConfig.saluran?.id || "120363426403323903@newsletter";
   const saluranName =
     botConfig.saluran?.name || botConfig.bot?.name || "Ucpai-AI";
   const saluranLink = botConfig.saluran?.link || "";
@@ -485,7 +485,7 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
     : null;
 
   const prefix = botConfig.command?.prefix || ".";
-  const saluranId = botConfig.saluran?.id || "120363208449943317@newsletter";
+  const saluranId = botConfig.saluran?.id || "120363426403323903@newsletter";
   const saluranName =
     botConfig.saluran?.name || botConfig.bot?.name || "Ucpai-AI";
   const saluranLink =
@@ -734,7 +734,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
           "ucpai3.jpg",
         );
         const saluranIdV6 =
-          botConfig.saluran?.id || "120363208449943317@newsletter";
+          botConfig.saluran?.id || "120363426403323903@newsletter";
         const saluranNameV6 =
           botConfig.saluran?.name || botConfig.bot?.name || "Ucpai-AI";
         const saluranLinkV6 =
@@ -1248,7 +1248,7 @@ Versi : v${botConfig.bot?.version || "1.9.0"}
 Runtime : Node.js ${process.version}
 Bot Up  : ${uptimeFormatted}
 
-Owner ku kak   : ${botConfig.owner?.name || "Lucky Archz"}
+Owner ku kak   : ${botConfig.owner?.name || "mr.ucup"}
 ─────────────────────────
 Klik tombol di bawah untuk menampilkan menu`;
 
@@ -1657,7 +1657,7 @@ Klik tombol di bawah untuk menampilkan menu`;
           "ucpai3.jpg",
         );
         const saluranIdV13 =
-          botConfig.saluran?.id || "120363208449943317@newsletter";
+          botConfig.saluran?.id || "120363426403323903@newsletter";
         const saluranNameV13 =
           botConfig.saluran?.name || botConfig.bot?.name || "Ucpai-AI";
         const saluranLinkV13 =
@@ -2015,7 +2015,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
       case 14:
         try {
           const saluranIdV14 =
-            botConfig.saluran?.id || "120363208449943317@newsletter";
+            botConfig.saluran?.id || "120363426403323903@newsletter";
           const saluranNameV14 =
             botConfig.saluran?.name || botConfig.bot?.name || "Ucpai-AI";
           const docuThumbV14 = fs.readFileSync(

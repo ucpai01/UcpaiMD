@@ -40,7 +40,7 @@ async function handler(m, { sock, config: botConfig }) {
     const imagePath = path.join(process.cwd(), 'assets', 'images', 'ucpai-rules.jpg')
     let imageBuffer = fs.existsSync(imagePath) ? fs.readFileSync(imagePath) : null
 
-    const saluranId = botConfig.saluran?.id || '120363208449943317@newsletter'
+    const saluranId = botConfig.saluran?.id || '120363426403323903@newsletter'
     const saluranName = botConfig.saluran?.name || botConfig.bot?.name || 'Ucpai-AI'
 
     if (imageBuffer) {

@@ -2,7 +2,7 @@ import te from '../../src/lib/ucpai-error.js'
 /**
  * @file plugins/owner/schedule.js
  * @description Command untuk mengelola scheduled messages
- * @author Lucky Archz, mr.ucup, hyuuSATAN
+ * @author mr.ucup, hyuuSATAN
  * @version 1.1.0
  */
 

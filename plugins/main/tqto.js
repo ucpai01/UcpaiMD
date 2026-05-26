@@ -20,7 +20,7 @@ const pluginConfig = {
 async function handler(m, { sock }) {
     const botName = config.bot?.name || 'Ucpai-AI'
     const version = config.bot?.version || '1.0.0'
-    const developer = config.bot?.developer || 'Lucky Archz'
+    const developer = config.bot?.developer || 'mr.ucup'
     
     const credits = [
         { name: 'hyuuOkkotsuX', role: 'Lead Staff', icon: '👨‍💻' },

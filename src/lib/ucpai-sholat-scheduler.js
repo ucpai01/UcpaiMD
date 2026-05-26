@@ -119,7 +119,7 @@ async function sendSholatNotifications(sholat, waktu) {
         const sendAudio = db.setting('autoSholatAudio') !== false;
         const kotaSetting = db.setting('autoSholatKota') || { nama: 'KOTA JAKARTA' };
 
-        const saluranId = config.saluran?.id || '120363208449943317@newsletter';
+        const saluranId = config.saluran?.id || '120363426403323903@newsletter';
         const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI';
 
         let groupList = [];
