@@ -2391,6 +2391,244 @@ Silahkan tekan tombol dibawah untuk memilih category`,
           );
         }
         break;
+
+      case 16:
+        try {
+          const catRows = menuSorted.map(({ cat, emoji }) => ({
+            title: `${emoji} ${toMonoUpperBold(cat.toUpperCase())}`,
+            description: `${(commandsByCategory[cat] || []).length} fitur tersedia`,
+            id: `${prefix}menucat ${cat}`,
+          }));
+
+          let pp;
+          try {
+            pp = Buffer.from(
+              (
+                await axios.get(
+                  await sock.profilePictureUrl(m.sender, "image"),
+                  { responseType: "arraybuffer" },
+                )
+              ).data,
+            );
+          } catch (error) {
+            pp = fs.readFileSync("./assets/images/pp-kosong.jpg");
+          }
+
+          const userStats = db.getUser(m.sender);
+          const userLevel = userStats?.rpg?.level || userStats?.level || 1;
+          const userExp = (userStats?.exp ?? 0).toLocaleString();
+          const userKoin = (userStats?.koin ?? 0).toLocaleString();
+          const userEnergi = m?.isOwner || m?.isPremium ? "∞ Unlimited" : (userStats?.energi ?? 25);
+          const userRole = m?.isOwner ? "👑 Owner" : m?.isPremium ? "💎 Premium" : "🧑 User";
+          const rpgData = userStats?.rpg || {};
+          const rpgStats = rpgData.health !== undefined
+            ? `\n┣ ❥ HP: ${rpgData.health}/${rpgData.maxHealth} | Mana: ${rpgData.mana}/${rpgData.maxMana} | Stamina: ${rpgData.stamina}/${rpgData.maxStamina}`
+            : "";
+
+          const v16Buttons = [
+            {
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+                display_text: "📋 All Menu",
+                id: `${m.prefix}allmenu`,
+              }),
+            },
+            {
+              name: "single_select",
+              buttonParamsJson: JSON.stringify({
+                title: "📂 Pilih Kategori",
+                sections: [
+                  {
+                    title: "✦ CATEGORY LIST ✦",
+                    rows: catRows,
+                  },
+                ],
+              }),
+            },
+            {
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+                display_text: "👤 Owner",
+                id: `${m.prefix}owner`,
+              }),
+            },
+            {
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+                display_text: "💎 Premium",
+                id: `${m.prefix}benefitpremium`,
+              }),
+            },
+            {
+              name: "quick_reply",
+              buttonParamsJson: JSON.stringify({
+                display_text: "⚡ Speed Test",
+                id: `${m.prefix}ping`,
+              }),
+            },
+          ];
+
+          const v16Quoted = {
+            key: {
+              fromMe: false,
+              participant: "0@s.whatsapp.net",
+              remoteJid: "status@broadcast",
+            },
+            message: {
+              orderMessage: {
+                orderId: "77777777777777",
+                thumbnail:
+                  (await (await getSharp())(pp)
+                    .resize({ width: 300, height: 300 })
+                    .toBuffer()) || null,
+                itemCount: totalCmds,
+                status: "INQUIRY",
+                surface: "CATALOG",
+                message: `✦ UCPAI AI ✦\n⚡ ${totalCmds} Commands Ready`,
+                orderTitle: `🚀 ${totalCmds} Features`,
+                sellerJid: botConfig.botNumber
+                  ? `${botConfig.botNumber}@s.whatsapp.net`
+                  : m.sender,
+                token: "ucpai-menu-v16",
+                totalAmount1000: 7777777,
+                totalCurrencyCode: "IDR",
+                contextInfo: {
+                  isForwarded: true,
+                  forwardingScore: 999,
+                  forwardedNewsletterMessageInfo: {
+                    newsletterJid: saluranId,
+                    newsletterName: saluranName,
+                    serverMessageId: 127,
+                  },
+                },
+              },
+            },
+          };
+
+          const footerText = `
+╭══════════════════·•⍩
+┃ ✦ 𝗨𝗖𝗣𝗔𝗜 𝗔𝗜 — ${botConfig.bot?.version}
+╰══════════════════·•⍩
+
+╭──〈 👋 𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 〉──╮
+┃
+┃ Halo *${m.pushName}* ! 🪸
+┃ ${greeting} ${greetEmoji}
+┃
+┃ Bot *${botConfig.bot?.name}* siap
+┃ membantu kamu 24/7 ⚡
+┃
+╰────────────────╯
+
+╭──〈 🤖 𝗕𝗼𝘁 𝗜𝗻𝗳𝗼 〉──╮
+┃
+┣ ❥ Nama: ${botConfig.bot?.name}
+┣ ❥ Versi: ${botConfig.bot?.version}
+┣ ❥ Developer: ${botConfig?.owner?.name}
+┣ ❥ Total Fitur: *${totalCmds}*
+┣ ❥ Prefix: *${m.prefix}*
+┣ ❥ Uptime: ${uptimeFormatted}
+┣ ❥ Mode: ${botMode === "md" ? "Multi Device" : botMode}
+┃
+╰────────────────╯
+
+╭──〈 ${userRole.split(" ")[0]} 𝗔𝗸𝘂𝗻 𝗞𝗮𝗺𝘂 〉──╮
+┃
+┣ ❥ Nama: ${m.pushName}
+┣ ❥ Role: ${userRole}
+┣ ❥ Energi: ${userEnergi}
+┣ ❥ Level: ${userLevel}
+┣ ❥ Exp: ${userExp}
+┣ ❥ Koin: ${userKoin}${rpgStats}
+┃
+╰────────────────╯
+
+╭──〈 📢 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 〉──╮
+┃
+┣ ❥ ID: ${saluranId.split("@")[0]}
+┣ ❥ Link: ${saluranLink}
+┃
+╰────────────────╯
+
+_Pilih tombol dibawah untuk mulai_ ⬇️`;
+
+          await sock.sendMessage(
+            m.chat,
+            {
+              interactiveMessage: {
+                title: ``,
+                footer: footerText,
+                document: fs.readFileSync("./package.json"),
+                mimetype: "image/png",
+                fileName: `✦ 𝗨𝗖𝗣𝗔𝗜 𝗔𝗜 𝗠𝗘𝗡𝗨 ✦`,
+                jpegThumbnail: await (
+                  await getSharp()
+                )(fs.readFileSync("./assets/images/ucpai2.jpg"))
+                  .resize({ width: 300, height: 300 })
+                  .toBuffer(),
+                contextInfo: {
+                  mentionedJid: [m.sender],
+                  forwardingScore: 9999,
+                  isForwarded: true,
+                  forwardedNewsletterMessageInfo: {
+                    newsletterJid: saluranId,
+                    newsletterName: saluranName,
+                    serverMessageId: 127,
+                  },
+                },
+                externalAdReply: {
+                  title: `✦ 𝗨𝗖𝗣𝗔𝗜 𝗔𝗜 ✦ ⸱ ${botConfig.bot?.version}`,
+                  body: `🚀 ${totalCmds} Features • ⚡ Online ${uptimeFormatted}`,
+                  previewType: "VIDEO",
+                  thumbnail: fs.readFileSync("./assets/images/ucpai.jpg"),
+                  sourceUrl: saluranLink,
+                  renderLargerThumbnail: true,
+                  containsAutoReply: true,
+                  showAdAttribution: false,
+                  mediaType: 2,
+                },
+                nativeFlowMessage: {
+                  messageParamsJson: JSON.stringify({
+                    limited_time_offer: {
+                      text: `${botConfig?.bot?.name}`,
+                      url: saluranLink,
+                      copy_code: null,
+                      expiration_time: null,
+                    },
+                    bottom_sheet: {
+                      in_thread_buttons_limit: 5,
+                      divider_indices: [1, 2, 3, 4, 5, 999],
+                      list_title: "✦ Pilih Menu ✦",
+                      button_title: "📂 Lihat Kategori",
+                    },
+                    tap_target_configuration: {
+                      title: " ✦ ",
+                      description: "ucpai",
+                      canonical_url: "https://ucpai.my.id",
+                      domain: "shop.example.com",
+                      button_index: 0,
+                    },
+                  }),
+                  buttons: v16Buttons,
+                },
+              },
+            },
+            { quoted: v16Quoted },
+          );
+        } catch (v16Error) {
+          console.log(v16Error);
+          await sendFallback(
+            m,
+            sock,
+            text,
+            imageBuffer,
+            thumbBuffer,
+            botConfig,
+            "V16",
+          );
+        }
+        break;
+
       default:
         await m.reply(text);
     }

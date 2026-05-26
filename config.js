@@ -134,7 +134,7 @@ const config = {
 
 
     ui: {
-        menuVariant: 3
+        menuVariant: 16
     },
 
     messages: {
