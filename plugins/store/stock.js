@@ -62,9 +62,9 @@ async function handler(m, { sock }) {
             {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                    title: '🌟 ʟɪʜᴀᴛ sᴛᴏᴄᴋ',
+                    title: '🌟 Lihat Stock',
                     sections: [{
-                        title: 'ᴘɪʟɪʜ ᴘʀᴏᴅᴜᴋ',
+                        title: 'Pilih Produk',
                         rows: stockRows
                     }]
                 })
@@ -72,7 +72,7 @@ async function handler(m, { sock }) {
             {
                 name: 'quick_reply',
                 buttonParamsJson: JSON.stringify({
-                    display_text: '🛒 ᴅᴀꜰᴛᴀʀ ᴘʀᴏᴅᴜᴋ',
+                    display_text: '🛒 Daftar Produk',
                     id: `${m.prefix}products`
                 })
             }
@@ -375,4 +375,4 @@ async function handler(m, { sock }) {
     }
 }
 
-export { pluginConfig as config, handler }
+export { pluginConfig as config, handler }                      

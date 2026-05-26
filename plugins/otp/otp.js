@@ -115,14 +115,14 @@ async function handler(m, { sock }) {
                 {
                     name: 'single_select',
                     buttonParamsJson: JSON.stringify({
-                        title: '🌍 ᴘɪʟɪʜ ɴᴇɢᴀʀᴀ',
+                        title: '🌍 Pilih Negara',
                         sections
                     })
                 },
                 {
                     name: 'quick_reply',
                     buttonParamsJson: JSON.stringify({
-                        display_text: '🌌 ʀɪᴡᴀʏᴀᴛ ᴏᴛᴘ',
+                        display_text: '🌌 Riwayat OTP',
                         id: `${m.prefix}myotp`
                     })
                 }

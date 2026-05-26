@@ -315,7 +315,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             mimetype: "image/png",
             fileLength: 999999999999,
             fileSize: 999999999999,
-            fileName: `${toSmallCaps(botConfig.bot?.name || "Ucpai-AI")} — ᴀʟʟ ᴍᴇɴᴜ`,
+            fileName: `${toSmallCaps(botConfig.bot?.name || "Ucpai-AI")} — All Menu`,
             caption: txt,
             jpegThumbnail: resizedThumb,
             contextInfo: fullContextInfo,
@@ -363,14 +363,14 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
           {
             name: "single_select",
             buttonParamsJson: JSON.stringify({
-              title: "🪐 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
-              sections: [{ title: "✦ ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ ✦", rows: categoryRows }],
+              title: "🪐 Pilih Kategori",
+              sections: [{ title: "★ PILIH KATEGORI ★", rows: categoryRows }],
             }),
           },
           {
             name: "quick_reply",
             buttonParamsJson: JSON.stringify({
-              display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
+              display_text: "↩️ Kembali ke Menu",
               id: `${prefix}menu`,
             }),
           },

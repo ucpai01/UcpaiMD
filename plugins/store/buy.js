@@ -77,9 +77,9 @@ async function handler(m, { sock }) {
             {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                    title: '💳 ᴘɪʟɪʜ ᴘʀᴏᴅᴜᴋ',
+                    title: '💳 Pilih Produk',
                     sections: [{
-                        title: 'ʙᴇʟɪ ᴅᴇɴɢᴀɴ sᴀʟᴅᴏ',
+                        title: 'Beli dengan Saldo',
                         rows: productRows
                     }]
                 })
@@ -87,7 +87,7 @@ async function handler(m, { sock }) {
             {
                 name: 'quick_reply',
                 buttonParamsJson: JSON.stringify({
-                    display_text: '💰 ᴄᴇᴋ sᴀʟᴅᴏ',
+                    display_text: '💰 Cek Saldo',
                     id: `${m.prefix}me`
                 })
             }

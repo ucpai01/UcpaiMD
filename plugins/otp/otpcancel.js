@@ -143,7 +143,7 @@ async function handler(m, { sock }) {
                 {
                     name: 'quick_reply',
                     buttonParamsJson: JSON.stringify({
-                        display_text: '📱 ᴏʀᴅᴇʀ ʙᴀʀᴜ',
+                        display_text: '📱 Order Baru',
                         id: `${m.prefix}otp`
                     })
                 }

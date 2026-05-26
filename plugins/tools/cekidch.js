@@ -81,14 +81,14 @@ async function handler(m, { sock }) {
             {
                 name: 'cta_copy',
                 buttonParamsJson: JSON.stringify({
-                    display_text: '✦ Copy ID Channel',
+                    display_text: '★ Copy ID Channel',
                     copy_code: chId
                 })
             },
             {
                 name: 'cta_url',
                 buttonParamsJson: JSON.stringify({
-                    display_text: '✦ Buka Channel',
+                    display_text: '★ Buka Channel',
                     url: text
                 })
             }

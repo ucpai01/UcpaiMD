@@ -271,7 +271,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   txt += `*│* ⏱ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
   txt += `*│* 👥 ᴛᴏᴛᴀʟ    : *${totalUsers} Users*\n`;
   txt += `*│* 🏷 ɢʀᴏᴜᴘ     : *${botMode.toUpperCase()}*\n`;
-  txt += `*│* 👑 ᴏᴡɴᴇʀ    : *${botConfig.owner?.name || "Ucpai-AI"}*\n`;
+  txt += `*│* 👑 Owner    : *${botConfig.owner?.name || "Ucpai-AI"}*\n`;
   txt += `╰────────────────⬣\n\n`;
 
   txt += `╭─〔 🧑 *ᴜsᴇʀ ɪɴꜰᴏ* 〕\n`;
@@ -357,7 +357,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   const allowedCategories = modeAllowedMap[botMode];
   const excludeCategories = modeExcludeMap[botMode] || [];
 
-  txt += `🌌 *ᴅᴀꜰᴛᴀʀ ᴍᴇɴᴜ*\n`;
+  txt += `🌌 *DAFTAR MENU*\n`;
 
   for (const category of sortedCategories) {
     if (category === "owner" && !m.isOwner) continue;
@@ -445,7 +445,7 @@ async function sendFallback(
 
   if (errorName === "V5") {
     const { sorted } = getSortedCategories(m, "md");
-    let catText = `✦ *ᴋᴀᴛᴇɢᴏʀɪ ᴍᴇɴᴜ*\n\n`;
+    let catText = `★ *KATEGORI MENU*\n\n`;
     for (const { cat, cmds, emoji } of sorted)
       catText += `> ${emoji} \`${botConfig.command?.prefix || "."}menucat ${cat}\` - ${toMonoUpperBold(cat)} (${cmds.length})\n`;
     catText += `\n_Ketik perintah kategori untuk melihat command_`;
@@ -613,7 +613,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
         headerText += `┃ \`◦\` ᴜᴘᴛɪᴍᴇ: *${uptimeFormatted}*\n`;
         headerText += `┃ \`◦\` ᴛᴏᴛᴀʟ ᴄᴍᴅ: *${totalCmds}*\n`;
         headerText += `╰┈┈┈┈┈┈┈┈⬡\n\n`;
-        headerText += `✦ *Pilih kategori di bawah untuk melihat daftar command*`;
+        headerText += `★ *Pilih kategori di bawah untuk melihat daftar command*`;
 
         try {
           const { generateWAMessageFromContent, proto } = await import("ucpai");
@@ -622,10 +622,10 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "🪐 ᴘɪʟɪʜ ᴍᴇɴᴜ",
+                title: "🪐 Pilih Menu",
                 sections: [
                   {
-                    title: "✦ ᴘɪʟɪʜ ᴄᴀᴛᴇɢᴏʀʏ ✦",
+                    title: "★ PILIH CATEGORY ★",
                     rows: categoryRows,
                   },
                 ],
@@ -634,14 +634,14 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "💫 ᴛᴏᴛᴀʟ ꜱᴇᴍᴜᴀ ꜰɪᴛᴜʀ",
+                display_text: "💫 Total Fitur",
                 id: `${prefix}totalfitur`,
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🪐 ꜱᴇᴍᴜᴀ ᴍᴇɴᴜ",
+                display_text: "🪐 Semua Menu",
                 id: `${prefix}allmenu`,
               }),
             },
@@ -887,7 +887,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
                     {
                       name: "quick_reply",
                       buttonParamsJson: JSON.stringify({
-                        display_text: `🎯 ʟɪʜᴀᴛ ${categoryName}`,
+                        display_text: `🎯 Lihat ${categoryName}`,
                         id: `${prefix}menucat ${cat}`,
                       }),
                     },
@@ -964,11 +964,11 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
           emojiRole = "♚";
         } else if (m.isPremium) {
           role = "𝙋𝙧𝙚𝙢𝙞𝙪𝙢";
-          emojiRole = "✦";
+          emojiRole = "★";
         }
 
         let menuText = ``;
-        const sparkles = ["✦", "✧", "⋆", "˚", "✵", "⊹"];
+        const sparkles = ["★", "✧", "⋆", "˚", "✵", "⊹"];
         const randomSparkle = () =>
           sparkles[Math.floor(Math.random() * sparkles.length)];
 
@@ -1001,12 +1001,12 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
         menuText += `┗━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
 
         menuText += `╭══════════════════════╮\n`;
-        menuText += `║  ✦ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧*    ║\n`;
+        menuText += `║  ★ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧*    ║\n`;
         menuText += `╰══════════════════════╯\n\n`;
 
         for (const { cat, cmds, emoji } of menuSorted) {
           menuText += `┌─────「 ${emoji} *${cat.toUpperCase()}* 」\n`;
-          menuText += `│ ✦ Total: ${cmds.length} commands\n`;
+          menuText += `│ ★ Total: ${cmds.length} commands\n`;
           menuText += `│\n`;
           for (const cmd of cmds) {
             menuText += `│ ├➤ ${prefix}${cmd}\n`;
@@ -1046,7 +1046,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
               status: "INQUIRY",
               surface: "CATALOG",
               message: `${botConfig.bot?.name || "Ucpai-AI"} Menu`,
-              orderTitle: `✦ ${totalCmds} Commands`,
+              orderTitle: `★ ${totalCmds} Commands`,
               sellerJid: botConfig.botNumber
                 ? `${botConfig.botNumber}@s.whatsapp.net`
                 : m.sender,
@@ -1121,7 +1121,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌟 ᴛᴀᴍᴘɪʟ ꜱᴇᴍᴜᴀ ᴍᴇɴᴜ",
+                display_text: "🌟 Tampilkan Semua Menu",
                 id: `${prefix}allmenu`,
               }),
             },
@@ -1164,7 +1164,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
                                 in_thread_buttons_energi: 2,
                                 divider_indices: [1, 2, 3, 4, 5, 999],
                                 list_title: botConfig.bot?.name || "Ucpai-AI",
-                                button_title: "🎯 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
+                                button_title: "🎯 Pilih Kategori",
                               },
                             }),
                             buttons: buttons,
@@ -1406,7 +1406,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                       in_thread_buttons_limit: 2,
                       divider_indices: [1, 2, 3, 4, 5, 999],
                       list_title: "Pilih Menu",
-                      button_title: "🎯 ᴘɪʟɪʜ ᴍᴇɴᴜ",
+                      button_title: "🎯 Pilih Menu",
                     },
                     tap_target_configuration: {
                       title: " X ",
@@ -1435,7 +1435,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                         title: "Pilihan Menu",
                         sections: [
                           {
-                            title: "🎯 ꜱɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴇɴᴜ",
+                            title: "🎯 Silakan Pilih Menu",
                             highlight_label: botConfig.bot?.name || "Ucpai-AI",
                             rows: catRows,
                           },
@@ -1454,7 +1454,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                     {
                       name: "quick_reply",
                       buttonParamsJson: JSON.stringify({
-                        display_text: "👑 ᴏᴡɴᴇʀ ᴋᴀᴍɪ",
+                        display_text: "👑 Owner Kami",
                         id: `${prefix}owner`,
                       }),
                     },
@@ -1595,7 +1595,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                       in_thread_buttons_limit: 2,
                       divider_indices: [1, 2, 3, 4, 5, 999],
                       list_title: "SIlahkan pilih category yang ingin dilihat",
-                      button_title: "✨ ᴛᴀᴘ ʜᴇʀᴇ!",
+                      button_title: "✨ Tap Here!",
                     },
                     tap_target_configuration: {
                       title: " X ",
@@ -1978,14 +1978,14 @@ Klik tombol di bawah untuk menampilkan menu`;
             m.chat,
             {
               image: bannerThumbV13,
-              caption: `🌟 ʜᴀʟʟᴏ *${m.pushName}*
+              caption: `🌟 Hallo *${m.pushName}*
 
-╭─ *✦* \`${toMonoUpperBold("biodata bot")}\` *✦*
+╭─ *★* \`${toMonoUpperBold("biodata bot")}\` *★*
 │ ʙᴏᴛ : *${botConfig.bot?.name || "Ucpai-AI"}*
 │ ᴠᴇʀsɪᴏɴ : *${botConfig.bot?.version || "2.1.0"}*
 ╰───
 
-╭─ *✦* \`${toMonoUpperBold(`list category`)}\` *✦*
+╭─ *★* \`${toMonoUpperBold(`list category`)}\` *★*
 ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
 ╰─────────────`,
               contextInfo: contextInfoV13,
@@ -2089,7 +2089,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
                       },
                       externalAdReply: {
                         title: botConfig?.bot?.name,
-                        body: `🌟 ᴅɪᴋᴇᴍʙᴀɴɢᴋᴀɴ ᴏʟᴇʜ ${botConfig?.bot?.developer}`,
+                        body: `🌟 Dikembangkan Oleh ${botConfig?.bot?.developer}`,
                         thumbnail: fs.readFileSync("./assets/images/ucpai.jpg"),
                         sourceUrl: `https://instagram.com/ucpai.md`,
                         mediaUrl: `https://instagram.com/ucpai.md`,
@@ -2136,7 +2136,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
                               in_thread_buttons_limit: 1,
                               divider_indices: [1],
                               list_title: getTimeGreeting(),
-                              button_title: "𖤍",
+                              button_title: "★",
                             },
                           }),
                         },
@@ -2206,17 +2206,17 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌟 ʟɪʜᴀᴛ ꜱᴇᴍᴜᴀ ᴍᴇɴᴜ",
+                display_text: "🌟 Lihat Semua Menu",
                 id: `${m.prefix}allmenu`,
               }),
             },
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "🪐 ʟɪʜᴀᴛ ᴋᴀᴛᴇɢᴏʀɪ",
+                title: "🪐 Lihat Kategori",
                 sections: [
                   {
-                    title: "✦ ᴘɪʟɪʜ ᴄᴀᴛᴇɢᴏʀʏ ✦",
+                    title: "★ PILIH CATEGORY ★",
                     rows: catRows,
                   },
                 ],
@@ -2226,7 +2226,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "👑 ᴏᴡɴᴇʀ",
+                display_text: "👑 Owner",
                 id: `${m.prefix}owner`,
               }),
             },
@@ -2247,8 +2247,8 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
                 itemCount: totalCmds,
                 status: "INQUIRY",
                 surface: "CATALOG",
-                message: `★ Terima kasih\n✦ Ada Error? Lapor owner`,
-                orderTitle: `✦ ${totalCmds} Commands`,
+                message: `★ Terima kasih\n★ Ada Error? Lapor owner`,
+                orderTitle: `★ ${totalCmds} Commands`,
                 sellerJid: botConfig.botNumber
                   ? `${botConfig.botNumber}@s.whatsapp.net`
                   : m.sender,
@@ -2419,7 +2419,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
           const userExp = (userStats?.exp ?? 0).toLocaleString();
           const userKoin = (userStats?.koin ?? 0).toLocaleString();
           const userEnergi = m?.isOwner || m?.isPremium ? "∞ Unlimited" : (userStats?.energi ?? 25);
-          const userRole = m?.isOwner ? "👑 Owner" : m?.isPremium ? "⭐ ᴘʀᴇᴍɪᴜᴍ" : "🧑 User";
+          const userRole = m?.isOwner ? "👑 Owner" : m?.isPremium ? "⭐ Premium" : "🧑 User";
           const rpgData = userStats?.rpg || {};
           const rpgStats = rpgData.health !== undefined
             ? `\n┣ ❥ HP: ${rpgData.health}/${rpgData.maxHealth} | Mana: ${rpgData.mana}/${rpgData.maxMana} | Stamina: ${rpgData.stamina}/${rpgData.maxStamina}`
@@ -2429,17 +2429,17 @@ Silahkan tekan tombol dibawah untuk memilih category`,
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌟 ᴀʟʟ ᴍᴇɴᴜ",
+                display_text: "🌟 All Menu",
                 id: `${m.prefix}allmenu`,
               }),
             },
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "🔮 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
+                title: "🔮 Pilih Kategori",
                 sections: [
                   {
-                    title: "✦ CATEGORY LIST ✦",
+                    title: "★ CATEGORY LIST ★",
                     rows: catRows,
                   },
                 ],
@@ -2448,21 +2448,21 @@ Silahkan tekan tombol dibawah untuk memilih category`,
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "👑 ᴏᴡɴᴇʀ",
+                display_text: "👑 Owner",
                 id: `${m.prefix}owner`,
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "⭐ ᴘʀᴇᴍɪᴜᴍ",
+                display_text: "⭐ Premium",
                 id: `${m.prefix}benefitpremium`,
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🚀 ꜱᴘᴇᴇᴅ ᴛᴇꜱᴛ",
+                display_text: "🚀 Speed Test",
                 id: `${m.prefix}ping`,
               }),
             },
@@ -2484,7 +2484,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
                 itemCount: totalCmds,
                 status: "INQUIRY",
                 surface: "CATALOG",
-                message: `✦ UCPAI AI ✦\n🚀 ${totalCmds} Commands Ready`,
+                message: `★ UCPAI AI ★\n🚀 ${totalCmds} Commands Ready`,
                 orderTitle: `🚀 ${totalCmds} Features`,
                 sellerJid: botConfig.botNumber
                   ? `${botConfig.botNumber}@s.whatsapp.net`
@@ -2507,7 +2507,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
 
           const footerText = `
 ╭══════════════════·•⍩
-┃ ✦ 𝗨𝗖𝗣𝗔𝗜 𝗔𝗜 — ${botConfig.bot?.version}
+┃ ★ UCPAI AI — ${botConfig.bot?.version}
 ╰══════════════════·•⍩
 
 ╭──〈 👋 𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 〉──╮
@@ -2560,7 +2560,7 @@ _Pilih tombol dibawah untuk mulai_ ⬇️`;
                 footer: footerText,
                 document: fs.readFileSync("./package.json"),
                 mimetype: "image/png",
-                fileName: `✦ 𝗨𝗖𝗣𝗔𝗜 𝗔𝗜 𝗠𝗘𝗡𝗨 ✦`,
+                fileName: `★ UCPAI AI MENU ★`,
                 jpegThumbnail: await (
                   await getSharp()
                 )(fs.readFileSync("./assets/images/ucpai2.jpg"))
@@ -2577,7 +2577,7 @@ _Pilih tombol dibawah untuk mulai_ ⬇️`;
                   },
                 },
                 externalAdReply: {
-                  title: `✦ 𝗨𝗖𝗣𝗔𝗜 𝗔𝗜 ✦ ⸱ ${botConfig.bot?.version}`,
+                  title: `★ UCPAI AI ★ ⸱ ${botConfig.bot?.version}`,
                   body: `🚀 ${totalCmds} Features • 💫 Online ${uptimeFormatted}`,
                   previewType: "VIDEO",
                   thumbnail: fs.readFileSync("./assets/images/ucpai.jpg"),
@@ -2598,11 +2598,11 @@ _Pilih tombol dibawah untuk mulai_ ⬇️`;
                     bottom_sheet: {
                       in_thread_buttons_limit: 5,
                       divider_indices: [1, 2, 3, 4, 5, 999],
-                      list_title: "✦ Pilih Menu ✦",
-                      button_title: "🔮 ʟɪʜᴀᴛ ᴋᴀᴛᴇɢᴏʀɪ",
+                      list_title: "★ Pilih Menu ★",
+                      button_title: "🔮 Lihat Kategori",
                     },
                     tap_target_configuration: {
-                      title: " ✦ ",
+                      title: " ★ ",
                       description: "ucpai",
                       canonical_url: "https://ucpai.my.id",
                       domain: "shop.example.com",
@@ -2674,4 +2674,4 @@ export default {
   config: pluginConfig,
   handler,
 };
- 
+        

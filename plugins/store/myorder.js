@@ -40,7 +40,7 @@ async function handler(m, { sock }) {
         const buttons = [{
             name: 'quick_reply',
             buttonParamsJson: JSON.stringify({
-                display_text: '🛒 ʟɪʜᴀᴛ ᴘʀᴏᴅᴜᴋ',
+                display_text: '🛒 Lihat Produk',
                 id: `${m.prefix}products`
             })
         }]
@@ -97,7 +97,7 @@ async function handler(m, { sock }) {
         {
             name: 'quick_reply',
             buttonParamsJson: JSON.stringify({
-                display_text: '🛒 ᴏʀᴅᴇʀ ʙᴀʀᴜ',
+                display_text: '🛒 Order Baru',
                 id: `${m.prefix}products`
             })
         }
@@ -107,7 +107,7 @@ async function handler(m, { sock }) {
         interactiveButtons.unshift({
             name: 'cta_copy',
             buttonParamsJson: JSON.stringify({
-                display_text: '✦ ᴄᴏᴘʏ ᴏʀᴅᴇʀ ɪᴅ',
+                display_text: '★ Copy Order ID',
                 copy_code: pendingOrder.orderId
             })
         })

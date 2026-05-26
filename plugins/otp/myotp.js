@@ -95,7 +95,7 @@ async function handler(m, { sock }) {
         buttons.push({
             name: 'single_select',
             buttonParamsJson: JSON.stringify({
-                title: '💫 ᴄᴇᴋ ᴏʀᴅᴇʀ ᴀᴋᴛɪꜰ',
+                title: '💫 Cek Order Aktif',
                 sections: [{
                     title: 'Pesanan Aktif',
                     rows
@@ -107,7 +107,7 @@ async function handler(m, { sock }) {
     buttons.push({
         name: 'quick_reply',
         buttonParamsJson: JSON.stringify({
-            display_text: '📱 ᴏʀᴅᴇʀ ʙᴀʀᴜ',
+            display_text: '📱 Order Baru',
             id: `${m.prefix}otp`
         })
     })

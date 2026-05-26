@@ -200,7 +200,7 @@ async function handler(m, { sock, db }) {
         } catch (e) {}
         
         await sock.sendMessage(m.chat, {
-            text: `✦ *ᴘɪʟɪʜ ɢʀᴜᴘ ᴜɴᴛᴜᴋ ᴘᴏsᴛ sᴛᴏʀʏ*\n\n` +
+            text: `★ *Pilih Grup untuk Post Story*\n\n` +
                   `> Media: *${mediaType}*\n` +
                   `> Total Grup: *${groupList.length}*\n\n` +
                   `_Pilih grup dari daftar di bawah:_`,

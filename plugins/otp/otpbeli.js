@@ -182,14 +182,14 @@ async function handler(m, { sock }) {
                         {
                             name: 'quick_reply',
                             buttonParamsJson: JSON.stringify({
-                                display_text: '💫 ᴄᴇᴋ sᴛᴀᴛᴜs',
+                                display_text: '💫 Cek Status',
                                 id: `${m.prefix}otpcek ${orderId}`
                             })
                         },
                         {
                             name: 'quick_reply',
                             buttonParamsJson: JSON.stringify({
-                                display_text: '❌ ʙᴀᴛᴀʟᴋᴀɴ',
+                                display_text: '❌ Batalkan',
                                 id: `${m.prefix}otpcancel ${orderId}`
                             })
                         }
@@ -214,14 +214,14 @@ async function handler(m, { sock }) {
                     {
                         name: 'quick_reply',
                         buttonParamsJson: JSON.stringify({
-                            display_text: '💫 ᴄᴇᴋ sᴛᴀᴛᴜs',
+                            display_text: '💫 Cek Status',
                             id: `${m.prefix}otpcek ${orderId}`
                         })
                     },
                     {
                         name: 'quick_reply',
                         buttonParamsJson: JSON.stringify({
-                            display_text: '❌ ʙᴀᴛᴀʟᴋᴀɴ',
+                            display_text: '❌ Batalkan',
                             id: `${m.prefix}otpcancel ${orderId}`
                         })
                     }

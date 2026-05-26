@@ -71,7 +71,7 @@ async function handler(m, { sock }) {
     const copyButtons = payments.map(pay => ({
         name: 'cta_copy',
         buttonParamsJson: JSON.stringify({
-            display_text: `✦ Copy No. ${pay.name}`,
+            display_text: `★ Copy No. ${pay.name}`,
             copy_code: pay.number
         })
     }))

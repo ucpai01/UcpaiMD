@@ -206,7 +206,7 @@ async function handler(m, { sock, db }) {
       return total > 0;
     });
 
-    txt += `╭─〔 ✦ *KATEGORI* 〕───⬣\n`;
+    txt += `╭─〔 ★ *KATEGORI* 〕───⬣\n`;
     for (const cat of visibleCats) {
       const pluginCmds = commandsByCategory[cat] || [];
       const caseCmds = casesByCategory[cat] || [];
@@ -279,14 +279,14 @@ async function handler(m, { sock, db }) {
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "🔮 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
-                sections: [{ title: "✦ ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ ✦", rows: catRows }],
+                title: "🔮 Pilih Kategori",
+                sections: [{ title: "★ PILIH KATEGORI ★", rows: catRows }],
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
+                display_text: "↩️ Kembali ke Menu",
                 id: `${prefix}menu`,
               }),
             },
@@ -311,7 +311,7 @@ async function handler(m, { sock, db }) {
                         }),
                       header:
                         proto.Message.InteractiveMessage.Header.fromObject({
-                          title: "🌌 ᴅᴀꜰᴛᴀʀ ᴋᴀᴛᴇɢᴏʀɪ",
+                          title: "🌌 Daftar Kategori",
                           subtitle: `${visibleCats.length} kategori`,
                           hasMediaAttachment: false,
                         }),
@@ -469,21 +469,21 @@ async function handler(m, { sock, db }) {
           ...sections.map((sec) => ({
             name: "single_select",
             buttonParamsJson: JSON.stringify({
-              title: `${emoji} ᴘɪʟɪʜ ᴄᴏᴍᴍᴀɴᴅ`,
+              title: `${emoji} Pilih Command`,
               sections: [sec],
             }),
           })),
           {
             name: "quick_reply",
             buttonParamsJson: JSON.stringify({
-              display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴋᴀᴛᴇɢᴏʀɪ",
+              display_text: "↩️ Kembali ke Kategori",
               id: `${prefix}menucat`,
             }),
           },
           {
             name: "quick_reply",
             buttonParamsJson: JSON.stringify({
-              display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
+              display_text: "↩️ Kembali ke Menu",
               id: `${prefix}menu`,
             }),
           },
@@ -558,3 +558,4 @@ async function handler(m, { sock, db }) {
 }
 
 export { pluginConfig as config, handler };
+                        

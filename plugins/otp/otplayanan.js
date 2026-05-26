@@ -100,7 +100,7 @@ async function handler(m, { sock }) {
                 {
                     name: 'single_select',
                     buttonParamsJson: JSON.stringify({
-                        title: '📱 ᴘɪʟɪʜ ʟᴀʏᴀɴᴀɴ',
+                        title: '📱 Pilih Layanan',
                         sections: [{
                             title: `Layanan di ${countryName}`,
                             rows
@@ -110,7 +110,7 @@ async function handler(m, { sock }) {
                 {
                     name: 'quick_reply',
                     buttonParamsJson: JSON.stringify({
-                        display_text: '🔙 ᴋᴇᴍʙᴀʟɪ',
+                        display_text: '🔙 Kembali',
                         id: `${m.prefix}otp`
                     })
                 }

@@ -121,7 +121,7 @@ async function handler(m, { sock }) {
             {
                 name: 'cta_copy',
                 buttonParamsJson: JSON.stringify({
-                    display_text: '✦ Copy ID Grup',
+                    display_text: '★ Copy ID Grup',
                     copy_code: groupJid
                 })
             }

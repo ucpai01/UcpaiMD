@@ -67,9 +67,9 @@ async function handler(m, { sock, db }) {
             {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                    title: '🔮 ᴘɪʟɪʜ ᴠᴀʀɪᴀɴᴛ',
+                    title: '🔮 Pilih Variant',
                     sections: [{
-                        title: 'ᴅᴀꜰᴛᴀʀ ᴠᴀʀɪᴀɴᴛ ᴀʟʟᴍᴇɴᴜ',
+                        title: 'Daftar Variant AllMenu',
                         rows
                     }]
                 })

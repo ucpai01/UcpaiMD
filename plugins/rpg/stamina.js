@@ -24,7 +24,7 @@ try {
     if (fs.existsSync(thumbPath)) thumbRpg = fs.readFileSync(thumbPath)
 } catch (e) {}
 
-async function getContextInfo(title = '🚀 *sᴛᴀᴍɪɴᴀ*', body = 'Energi') {
+async function getContextInfo(title = '🚀 *Stamina*', body = 'Energi') {
     const saluranId = config.saluran?.id || '120363426403323903@newsletter'
     const saluranName = config.saluran?.name || config.bot?.name || 'Ucpai-AI'
     
