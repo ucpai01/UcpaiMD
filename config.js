@@ -248,15 +248,15 @@ const config = {
     //  APIkey
     APIkey: {
         // kalian bisa daftar di https://api.lolhuman.xyz, lalu ambil apikeynya
-        lolhuman: '',
+        lolhuman: 'YOUR_LOLHUMAN_API_KEY_HERE',
         // kalian bisa daftar di https://api.neoxr.eu, lalu ambil apikeynya
-        neoxr: '',
-        fgsi: '',
-        google: '',
-        groq: '',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
-        betabotz: '',
+        neoxr: 'YOUR_NEOXR_API_KEY_HERE',
+        fgsi: 'YOUR_FGSI_API_KEY_HERE',
+        google: 'YOUR_GOOGLE_API_KEY_HERE',
+        groq: 'YOUR_GROQ_API_KEY_HERE',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
+        betabotz: 'YOUR_BETABOTZ_API_KEY_HERE',
         // kalian bisa daftar di https://covenant.sbs, dan ambil apikeynya
-        covenant: ''
+        covenant: 'YOUR_COVENANT_API_KEY_HERE'
     }
 }
 

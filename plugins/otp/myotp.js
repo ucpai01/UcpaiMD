@@ -44,7 +44,7 @@ async function handler(m, { sock }) {
 
     if (orders.length === 0) {
         return m.reply(
-            `📋 *ʀɪᴡᴀʏᴀᴛ ᴏᴛᴘ*\n\n` +
+            `🌌 *ʀɪᴡᴀʏᴀᴛ ᴏᴛᴘ*\n\n` +
             `> Kamu belum pernah memesan OTP.\n\n` +
             `> Mulai pesan: \`${m.prefix}otp\``
         )
@@ -55,7 +55,7 @@ async function handler(m, { sock }) {
         ['pending_payment', 'creating_otp', 'waiting_otp'].includes(o.status)
     )
 
-    let txt = `📋 *ʀɪᴡᴀʏᴀᴛ ᴏᴛᴘ*\n\n`
+    let txt = `🌌 *ʀɪᴡᴀʏᴀᴛ ᴏᴛᴘ*\n\n`
     txt += `> Total pesanan: *${orders.length}*\n`
     txt += `> Menampilkan ${recent.length} terbaru\n\n`
 
@@ -84,7 +84,7 @@ async function handler(m, { sock }) {
     txt += `> ❌ Batalkan: \`${m.prefix}otpcancel <order_id>\``
 
     const rows = activeOrders.map(o => ({
-        title: `📊 ${o.orderId}`,
+        title: `💫 ${o.orderId}`,
         description: `${o.serviceName || '-'} | ${o.status}`,
         id: `${m.prefix}otpcek ${o.orderId}`
     }))
@@ -95,7 +95,7 @@ async function handler(m, { sock }) {
         buttons.push({
             name: 'single_select',
             buttonParamsJson: JSON.stringify({
-                title: '📊 ᴄᴇᴋ ᴏʀᴅᴇʀ ᴀᴋᴛɪꜰ',
+                title: '💫 ᴄᴇᴋ ᴏʀᴅᴇʀ ᴀᴋᴛɪꜰ',
                 sections: [{
                     title: 'Pesanan Aktif',
                     rows

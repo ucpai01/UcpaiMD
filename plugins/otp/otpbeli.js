@@ -111,7 +111,7 @@ async function handler(m, { sock }) {
 
         let invoiceTxt = `💳 *ᴋᴏɴꜰɪʀᴍᴀsɪ ᴘᴇsᴀɴᴀɴ ᴏᴛᴘ*\n\n`
         invoiceTxt += `Halo *${m.pushName}*! Berikut detail pesanan kamu:\n\n`
-        invoiceTxt += `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ ᴘᴇsᴀɴᴀɴ* 」\n`
+        invoiceTxt += `╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ ᴘᴇsᴀɴᴀɴ* 」\n`
         invoiceTxt += `┃ 🆔 Order ID: \`${orderId}\`\n`
         invoiceTxt += `┃ 🌍 Negara: *${countryName}*\n`
         invoiceTxt += `┃ 📱 Layanan: *${serviceName}*\n`
@@ -182,7 +182,7 @@ async function handler(m, { sock }) {
                         {
                             name: 'quick_reply',
                             buttonParamsJson: JSON.stringify({
-                                display_text: '📊 ᴄᴇᴋ sᴛᴀᴛᴜs',
+                                display_text: '💫 ᴄᴇᴋ sᴛᴀᴛᴜs',
                                 id: `${m.prefix}otpcek ${orderId}`
                             })
                         },
@@ -214,7 +214,7 @@ async function handler(m, { sock }) {
                     {
                         name: 'quick_reply',
                         buttonParamsJson: JSON.stringify({
-                            display_text: '📊 ᴄᴇᴋ sᴛᴀᴛᴜs',
+                            display_text: '💫 ᴄᴇᴋ sᴛᴀᴛᴜs',
                             id: `${m.prefix}otpcek ${orderId}`
                         })
                     },

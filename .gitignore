@@ -4,3 +4,4 @@ storage/
 .temp/
 package-lock.json
 *.log
+config.js.bak

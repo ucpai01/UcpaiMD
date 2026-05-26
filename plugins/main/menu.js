@@ -237,13 +237,13 @@ async function buildMenuText(m, botConfig, db, uptime, botMode = "md") {
   const totalFeatures = totalCommands + totalCases;
 
   let userRole = "User",
-    roleEmoji = "👤";
+    roleEmoji = "🧑";
   if (m.isOwner) {
     userRole = "Owner";
     roleEmoji = "👑";
   } else if (m.isPremium) {
     userRole = "Premium";
-    roleEmoji = "💎";
+    roleEmoji = "⭐";
   }
 
   const greeting = getTimeGreeting();
@@ -264,7 +264,7 @@ Aku ${botConfig.bot?.name || "Ucpai-AI"}, bot WhatsApp yang siap bantu kamu.
 Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana langsung lewat WhatsApp — praktis tanpa ribet.`;
 
   txt += `\n\n╭─〔 🤖 *ʙᴏᴛ ɪɴꜰᴏ* 〕\n`;
-  txt += `*│* 🖐 ɴᴀᴍᴀ     : *${botConfig.bot?.name || "Ucpai-AI"}*\n`;
+  txt += `*│* 🏷️ ɴᴀᴍᴀ     : *${botConfig.bot?.name || "Ucpai-AI"}*\n`;
   txt += `*│* 🔑 ᴠᴇʀsɪ    : *v${botConfig.bot?.version || "1.2.0"}*\n`;
   txt += `*│* ⚙️ ᴍᴏᴅᴇ     : *${(botConfig.mode || "public").toUpperCase()}*\n`;
   txt += `*│* 🧶 ᴘʀᴇꜰɪx    : *[ ${prefix} ]*\n`;
@@ -274,11 +274,11 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   txt += `*│* 👑 ᴏᴡɴᴇʀ    : *${botConfig.owner?.name || "Ucpai-AI"}*\n`;
   txt += `╰────────────────⬣\n\n`;
 
-  txt += `╭─〔 👤 *ᴜsᴇʀ ɪɴꜰᴏ* 〕\n`;
+  txt += `╭─〔 🧑 *ᴜsᴇʀ ɪɴꜰᴏ* 〕\n`;
   txt += `*│* 🙋 ɴᴀᴍᴀ     : *${m.pushName}*\n`;
   txt += `*│* 🎭 ʀᴏʟᴇ     : *${roleEmoji} ${userRole}*\n`;
   txt += `*│* 🎟 ᴇɴᴇʀɢɪ   : *${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}*\n`;
-  txt += `*│* ⚡ ʟᴇᴠᴇʟ    : *${user?.rpg?.level || user?.level || 1}*\n`;
+  txt += `*│* 🚀 ʟᴇᴠᴇʟ    : *${user?.rpg?.level || user?.level || 1}*\n`;
   txt += `*│* ✨ ᴇxᴘ       : *${(user?.exp ?? 0).toLocaleString()}*\n`;
   txt += `*│* 💰 ᴋᴏɪɴ      : *${(user?.koin ?? 0).toLocaleString()}*\n`;
   const rpg = user?.rpg || {};
@@ -357,7 +357,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   const allowedCategories = modeAllowedMap[botMode];
   const excludeCategories = modeExcludeMap[botMode] || [];
 
-  txt += `📂 *ᴅᴀꜰᴛᴀʀ ᴍᴇɴᴜ*\n`;
+  txt += `🌌 *ᴅᴀꜰᴛᴀʀ ᴍᴇɴᴜ*\n`;
 
   for (const category of sortedCategories) {
     if (category === "owner" && !m.isOwner) continue;
@@ -445,7 +445,7 @@ async function sendFallback(
 
   if (errorName === "V5") {
     const { sorted } = getSortedCategories(m, "md");
-    let catText = `📋 *ᴋᴀᴛᴇɢᴏʀɪ ᴍᴇɴᴜ*\n\n`;
+    let catText = `✦ *ᴋᴀᴛᴇɢᴏʀɪ ᴍᴇɴᴜ*\n\n`;
     for (const { cat, cmds, emoji } of sorted)
       catText += `> ${emoji} \`${botConfig.command?.prefix || "."}menucat ${cat}\` - ${toMonoUpperBold(cat)} (${cmds.length})\n`;
     catText += `\n_Ketik perintah kategori untuk melihat command_`;
@@ -613,7 +613,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
         headerText += `┃ \`◦\` ᴜᴘᴛɪᴍᴇ: *${uptimeFormatted}*\n`;
         headerText += `┃ \`◦\` ᴛᴏᴛᴀʟ ᴄᴍᴅ: *${totalCmds}*\n`;
         headerText += `╰┈┈┈┈┈┈┈┈⬡\n\n`;
-        headerText += `📋 *Pilih kategori di bawah untuk melihat daftar command*`;
+        headerText += `✦ *Pilih kategori di bawah untuk melihat daftar command*`;
 
         try {
           const { generateWAMessageFromContent, proto } = await import("ucpai");
@@ -622,10 +622,10 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "📁 ᴘɪʟɪʜ ᴍᴇɴᴜ",
+                title: "🪐 ᴘɪʟɪʜ ᴍᴇɴᴜ",
                 sections: [
                   {
-                    title: "📋 PILIH CATEGORY",
+                    title: "✦ ᴘɪʟɪʜ ᴄᴀᴛᴇɢᴏʀʏ ✦",
                     rows: categoryRows,
                   },
                 ],
@@ -634,14 +634,14 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "📊 TOTAL SEMUA FITUR",
+                display_text: "💫 ᴛᴏᴛᴀʟ ꜱᴇᴍᴜᴀ ꜰɪᴛᴜʀ",
                 id: `${prefix}totalfitur`,
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "📊 SEMUA MENU",
+                display_text: "🪐 ꜱᴇᴍᴜᴀ ᴍᴇɴᴜ",
                 id: `${prefix}allmenu`,
               }),
             },
@@ -887,7 +887,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
                     {
                       name: "quick_reply",
                       buttonParamsJson: JSON.stringify({
-                        display_text: `📋 Lihat ${categoryName}`,
+                        display_text: `🎯 ʟɪʜᴀᴛ ${categoryName}`,
                         id: `${prefix}menucat ${cat}`,
                       }),
                     },
@@ -977,10 +977,10 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
         menuText += `${randomSparkle()}━━━━━━━━━━━━━━━━━━━━━${randomSparkle()}\n\n`;
 
         menuText += `┏━━━〔 ${emojiRole} *𝗣𝗥𝗢𝗙𝗜𝗟𝗘* 〕━━━┓\n`;
-        menuText += `┃ 👤 *${m.pushName}*\n`;
+        menuText += `┃ 🧑 *${m.pushName}*\n`;
         menuText += `┃ 🏷️ ${role}\n`;
         menuText += `┃ 🎫 Energi  ➤ ${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}\n`;
-        menuText += `┃ ⚡ Level   ➤ ${user?.rpg?.level || user?.level || 1}\n`;
+        menuText += `┃ 🚀 Level   ➤ ${user?.rpg?.level || user?.level || 1}\n`;
         menuText += `┃ ✨ Exp     ➤ ${(user?.exp ?? 0).toLocaleString()}\n`;
         menuText += `┃ 💰 Koin    ➤ ${(user?.koin ?? 0).toLocaleString()}\n`;
         const v8rpg = user?.rpg || {};
@@ -993,15 +993,15 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
         menuText += `┃ 📅 ${date}\n`;
         menuText += `┗━━━━━━━━━━━━━━━┛\n\n`;
 
-        menuText += `┏━━〔 ⚡ *𝗦𝗬𝗦𝗧𝗘𝗠 𝗦𝗧𝗔𝗧𝗦* 〕━━┓\n`;
+        menuText += `┏━━〔 🚀 *𝗦𝗬𝗦𝗧𝗘𝗠 𝗦𝗧𝗔𝗧𝗦* 〕━━┓\n`;
         menuText += `┃ ⏱️ Uptime  ➤ ${uptimeFormatted}\n`;
         menuText += `┃ 🔧 Mode    ➤ ${botMode.toUpperCase()}\n`;
-        menuText += `┃ 📊 Total   ➤ ${totalCmds} Commands\n`;
+        menuText += `┃ 💫 ᴛᴏᴛᴀʟ   ➤ ${totalCmds} Commands\n`;
         menuText += `┃ 👥 Users   ➤ ${db.getUserCount()} Aktif\n`;
         menuText += `┗━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
 
         menuText += `╭══════════════════════╮\n`;
-        menuText += `║  📋 *𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧*    ║\n`;
+        menuText += `║  ✦ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧*    ║\n`;
         menuText += `╰══════════════════════╯\n\n`;
 
         for (const { cat, cmds, emoji } of menuSorted) {
@@ -1046,7 +1046,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
               status: "INQUIRY",
               surface: "CATALOG",
               message: `${botConfig.bot?.name || "Ucpai-AI"} Menu`,
-              orderTitle: `📋 ${totalCmds} Commands`,
+              orderTitle: `✦ ${totalCmds} Commands`,
               sellerJid: botConfig.botNumber
                 ? `${botConfig.botNumber}@s.whatsapp.net`
                 : m.sender,
@@ -1121,7 +1121,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🧾 Tampilkan Semua Menu",
+                display_text: "🌟 ᴛᴀᴍᴘɪʟ ꜱᴇᴍᴜᴀ ᴍᴇɴᴜ",
                 id: `${prefix}allmenu`,
               }),
             },
@@ -1164,7 +1164,7 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
                                 in_thread_buttons_energi: 2,
                                 divider_indices: [1, 2, 3, 4, 5, 999],
                                 list_title: botConfig.bot?.name || "Ucpai-AI",
-                                button_title: "🍀 ριℓιн кαтєgσяι",
+                                button_title: "🎯 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
                               },
                             }),
                             buttons: buttons,
@@ -1352,7 +1352,7 @@ Klik tombol di bawah untuk menampilkan menu`;
 
           const catRows = menuSorted.map(({ cat, cmds }) => ({
             header: "",
-            title: `🍀 ${toMonoUpperBold(cat)}`,
+            title: `🎯 ${toMonoUpperBold(cat)}`,
             id: `${prefix}menucat ${cat}`,
             description: `Berisi ${cmds.length} Perintah`,
           }));
@@ -1406,7 +1406,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                       in_thread_buttons_limit: 2,
                       divider_indices: [1, 2, 3, 4, 5, 999],
                       list_title: "Pilih Menu",
-                      button_title: "🍀 Pilih Menu Disini",
+                      button_title: "🎯 ᴘɪʟɪʜ ᴍᴇɴᴜ",
                     },
                     tap_target_configuration: {
                       title: " X ",
@@ -1435,7 +1435,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                         title: "Pilihan Menu",
                         sections: [
                           {
-                            title: "🍀 Silahkan pilih menu yang kamu inginkan",
+                            title: "🎯 ꜱɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴇɴᴜ",
                             highlight_label: botConfig.bot?.name || "Ucpai-AI",
                             rows: catRows,
                           },
@@ -1454,7 +1454,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                     {
                       name: "quick_reply",
                       buttonParamsJson: JSON.stringify({
-                        display_text: "🖐 Owner Kami",
+                        display_text: "👑 ᴏᴡɴᴇʀ ᴋᴀᴍɪ",
                         id: `${prefix}owner`,
                       }),
                     },
@@ -1558,7 +1558,7 @@ Klik tombol di bawah untuk menampilkan menu`;
             m.chat,
             {
               interactiveMessage: {
-                title: `🌾 *𝘏𝘪! ${m.pushName}*\n\n𝘛𝘩𝘢𝘯𝘬𝘴 𝘧𝘰𝘳 𝘮𝘦𝘴𝘴𝘢𝘨𝘪𝘯𝘨 𝘶𝘴. 𝘠𝘰𝘶’𝘳𝘦 𝘯𝘰𝘸 𝘤𝘩𝘢𝘵𝘵𝘪𝘯𝘨 𝘸𝘪𝘵𝘩 𝘰𝘶𝘳 𝘈𝘶𝘵𝘰𝘮𝘢𝘵𝘪𝘤 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘉𝘰𝘵. \n\n╭─「 *${m.pushName}* 」\n│ • Bot Version     : *${botConfig.bot?.version || "2.1.0"}*\n│ • Database        : ${formatBytes(bytes)}\n╰──`,
+                title: `🌟 *𝘏𝘪! ${m.pushName}*\n\n𝘛𝘩𝘢𝘯𝘬𝘴 𝘧𝘰𝘳 𝘮𝘦𝘴𝘴𝘢𝘨𝘪𝘯𝘨 𝘶𝘴. 𝘠𝘰𝘶’𝘳𝘦 𝘯𝘰𝘸 𝘤𝘩𝘢𝘵𝘵𝘪𝘯𝘨 𝘸𝘪𝘵𝘩 𝘰𝘶𝘳 𝘈𝘶𝘵𝘰𝘮𝘢𝘵𝘪𝘤 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘉𝘰𝘵. \n\n╭─「 *${m.pushName}* 」\n│ • Bot Version     : *${botConfig.bot?.version || "2.1.0"}*\n│ • Database        : ${formatBytes(bytes)}\n╰──`,
                 footer:
                   botConfig.settings?.footer ||
                   `© ${botConfig.bot?.name || "Ucpai-AI"} 2026`,
@@ -1595,7 +1595,7 @@ Klik tombol di bawah untuk menampilkan menu`;
                       in_thread_buttons_limit: 2,
                       divider_indices: [1, 2, 3, 4, 5, 999],
                       list_title: "SIlahkan pilih category yang ingin dilihat",
-                      button_title: "🧾 Tap Here!",
+                      button_title: "✨ ᴛᴀᴘ ʜᴇʀᴇ!",
                     },
                     tap_target_configuration: {
                       title: " X ",
@@ -1978,7 +1978,7 @@ Klik tombol di bawah untuk menampilkan menu`;
             m.chat,
             {
               image: bannerThumbV13,
-              caption: `🎄 ʜᴀʟʟᴏ *${m.pushName}*
+              caption: `🌟 ʜᴀʟʟᴏ *${m.pushName}*
 
 ╭─ *✦* \`${toMonoUpperBold("biodata bot")}\` *✦*
 │ ʙᴏᴛ : *${botConfig.bot?.name || "Ucpai-AI"}*
@@ -2089,7 +2089,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
                       },
                       externalAdReply: {
                         title: botConfig?.bot?.name,
-                        body: `🌾 Dikembangkan oleh ${botConfig?.bot?.developer}`,
+                        body: `🌟 ᴅɪᴋᴇᴍʙᴀɴɢᴋᴀɴ ᴏʟᴇʜ ${botConfig?.bot?.developer}`,
                         thumbnail: fs.readFileSync("./assets/images/ucpai.jpg"),
                         sourceUrl: `https://instagram.com/ucpai.md`,
                         mediaUrl: `https://instagram.com/ucpai.md`,
@@ -2206,17 +2206,17 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🎄 Lihat Semua Menu",
+                display_text: "🌟 ʟɪʜᴀᴛ ꜱᴇᴍᴜᴀ ᴍᴇɴᴜ",
                 id: `${m.prefix}allmenu`,
               }),
             },
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "📁 Lihat Kategori",
+                title: "🪐 ʟɪʜᴀᴛ ᴋᴀᴛᴇɢᴏʀɪ",
                 sections: [
                   {
-                    title: "📋 PILIH CATEGORY",
+                    title: "✦ ᴘɪʟɪʜ ᴄᴀᴛᴇɢᴏʀʏ ✦",
                     rows: catRows,
                   },
                 ],
@@ -2226,7 +2226,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🌾 Owner Dari Bot ini",
+                display_text: "👑 ᴏᴡɴᴇʀ",
                 id: `${m.prefix}owner`,
               }),
             },
@@ -2248,7 +2248,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
                 status: "INQUIRY",
                 surface: "CATALOG",
                 message: `★ Terima kasih\n✦ Ada Error? Lapor owner`,
-                orderTitle: `📋 ${totalCmds} Commands`,
+                orderTitle: `✦ ${totalCmds} Commands`,
                 sellerJid: botConfig.botNumber
                   ? `${botConfig.botNumber}@s.whatsapp.net`
                   : m.sender,
@@ -2297,7 +2297,7 @@ ${menuSorted.map(({ cat }) => `│ *${prefix}menucat ${cat}*`).join("\n")}
 Selamat datang di *${botConfig.bot?.name}* ✨
 Bot ini siap bantu kamu dengan berbagai fitur menarik yang bisa kamu gunakan kapan saja 🚀
 
-Mulai dari hiburan, tools, hingga fitur keren lainnya sudah tersedia di sini 🎄
+Mulai dari hiburan, tools, hingga fitur keren lainnya sudah tersedia di sini 🌟
 Jangan ragu untuk eksplor semua menu yang ada ya!
 
 Gunakan bot dengan bijak dan tetap sopan saat berinteraksi 😊
@@ -2419,7 +2419,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
           const userExp = (userStats?.exp ?? 0).toLocaleString();
           const userKoin = (userStats?.koin ?? 0).toLocaleString();
           const userEnergi = m?.isOwner || m?.isPremium ? "∞ Unlimited" : (userStats?.energi ?? 25);
-          const userRole = m?.isOwner ? "👑 Owner" : m?.isPremium ? "💎 Premium" : "🧑 User";
+          const userRole = m?.isOwner ? "👑 Owner" : m?.isPremium ? "⭐ ᴘʀᴇᴍɪᴜᴍ" : "🧑 User";
           const rpgData = userStats?.rpg || {};
           const rpgStats = rpgData.health !== undefined
             ? `\n┣ ❥ HP: ${rpgData.health}/${rpgData.maxHealth} | Mana: ${rpgData.mana}/${rpgData.maxMana} | Stamina: ${rpgData.stamina}/${rpgData.maxStamina}`
@@ -2429,14 +2429,14 @@ Silahkan tekan tombol dibawah untuk memilih category`,
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "📋 All Menu",
+                display_text: "🌟 ᴀʟʟ ᴍᴇɴᴜ",
                 id: `${m.prefix}allmenu`,
               }),
             },
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "📂 Pilih Kategori",
+                title: "🔮 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
                 sections: [
                   {
                     title: "✦ CATEGORY LIST ✦",
@@ -2448,21 +2448,21 @@ Silahkan tekan tombol dibawah untuk memilih category`,
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "👤 Owner",
+                display_text: "👑 ᴏᴡɴᴇʀ",
                 id: `${m.prefix}owner`,
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "💎 Premium",
+                display_text: "⭐ ᴘʀᴇᴍɪᴜᴍ",
                 id: `${m.prefix}benefitpremium`,
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "⚡ Speed Test",
+                display_text: "🚀 ꜱᴘᴇᴇᴅ ᴛᴇꜱᴛ",
                 id: `${m.prefix}ping`,
               }),
             },
@@ -2484,7 +2484,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
                 itemCount: totalCmds,
                 status: "INQUIRY",
                 surface: "CATALOG",
-                message: `✦ UCPAI AI ✦\n⚡ ${totalCmds} Commands Ready`,
+                message: `✦ UCPAI AI ✦\n🚀 ${totalCmds} Commands Ready`,
                 orderTitle: `🚀 ${totalCmds} Features`,
                 sellerJid: botConfig.botNumber
                   ? `${botConfig.botNumber}@s.whatsapp.net`
@@ -2516,7 +2516,7 @@ Silahkan tekan tombol dibawah untuk memilih category`,
 ┃ ${greeting} ${greetEmoji}
 ┃
 ┃ Bot *${botConfig.bot?.name}* siap
-┃ membantu kamu 24/7 ⚡
+┃ membantu kamu 24/7 🚀
 ┃
 ╰────────────────╯
 
@@ -2578,7 +2578,7 @@ _Pilih tombol dibawah untuk mulai_ ⬇️`;
                 },
                 externalAdReply: {
                   title: `✦ 𝗨𝗖𝗣𝗔𝗜 𝗔𝗜 ✦ ⸱ ${botConfig.bot?.version}`,
-                  body: `🚀 ${totalCmds} Features • ⚡ Online ${uptimeFormatted}`,
+                  body: `🚀 ${totalCmds} Features • 💫 Online ${uptimeFormatted}`,
                   previewType: "VIDEO",
                   thumbnail: fs.readFileSync("./assets/images/ucpai.jpg"),
                   sourceUrl: saluranLink,
@@ -2599,7 +2599,7 @@ _Pilih tombol dibawah untuk mulai_ ⬇️`;
                       in_thread_buttons_limit: 5,
                       divider_indices: [1, 2, 3, 4, 5, 999],
                       list_title: "✦ Pilih Menu ✦",
-                      button_title: "📂 Lihat Kategori",
+                      button_title: "🔮 ʟɪʜᴀᴛ ᴋᴀᴛᴇɢᴏʀɪ",
                     },
                     tap_target_configuration: {
                       title: " ✦ ",
@@ -2674,3 +2674,4 @@ export default {
   config: pluginConfig,
   handler,
 };
+ 

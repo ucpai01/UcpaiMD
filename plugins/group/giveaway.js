@@ -3,7 +3,12 @@ import * as timeHelper from '../../src/lib/ucpai-time.js'
 import cron from 'node-cron'
 import path from 'path'
 import fs from 'fs'
-import { getDatabase } from '../../src/lib/ucpai-database.js'
+import { getDatabase } from '../../src/lib/ucpai-database.js'
+
+
+
+
+
 const pluginConfig = {
     name: 'giveaway',
     alias: ['ga', 'gaway'],
@@ -99,7 +104,7 @@ function buildGiveawayMessage(giveaway, participantCount = 0, prefix = '.') {
 ┃ 📝 ᴅᴇsᴋ: _${giveaway.description}_
 ╰┈┈⬡
 
-╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」
+╭┈┈⬡「 ✦ *ɪɴꜰᴏ* 」
 ┃ 👥 ᴘᴇᴍᴇɴᴀɴɢ: \`${giveaway.winners} orang\`
 ┃ 👤 ᴘᴇsᴇʀᴛᴀ: \`${participantCount} orang\`
 ┃ ⏰ ʙᴇʀᴀᴋʜɪʀ: \`${endTimeFormatted}\`
@@ -202,7 +207,7 @@ async function endGiveaway(giveawayId, sock, db) {
             await sock.sendMessage(winner, {
                 text: `🎉 *sᴇʟᴀᴍᴀᴛ!*\n\n` +
                     `> Kamu memenangkan giveaway!\n\n` +
-                    `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+                    `╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ* 」\n` +
                     `┃ 🎁 ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
                     `┃ 🏆 ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
                     `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
@@ -225,7 +230,7 @@ async function endGiveaway(giveawayId, sock, db) {
             await sock.sendMessage(giveaway.adminJid, {
                 text: `🎊 *ɴᴏᴛɪꜰ ɢɪᴠᴇᴀᴡᴀʏ*\n\n` +
                     `> Giveaway telah berakhir!\n\n` +
-                    `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+                    `╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ* 」\n` +
                     `┃ 🎁 ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
                     `┃ 🏆 ʜᴀᴅɪᴀʜ: \`${giveaway.prize}\`\n` +
                     `┃ 👥 ᴘᴇsᴇʀᴛᴀ: \`${participants.length}\`\n` +
@@ -327,9 +332,9 @@ async function handler(m, { sock, args: rawArgs }) {
             
             const successMsg = `✅ *ɢɪᴠᴇᴀᴡᴀʏ ᴅɪᴘᴏsᴛ*
 
-╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」
+╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ* 」
 ┃ 🆔 ɪᴅ: \`${giveawayId}\`
-┃ 🏠 ɢʀᴜᴘ: *${groupName}*
+┃ 🏘️ ɢʀᴜᴘ: *${groupName}*
 ┃ 🎁 ᴛɪᴛʟᴇ: \`${pendingData.title}\`
 ┃ 🏆 ʜᴀᴅɪᴀʜ: *${pendingData.prizeName}*
 ┃ ⏱️ ᴅᴜʀᴀsɪ: \`${formatDuration(pendingData.duration)}\`
@@ -355,14 +360,14 @@ async function handler(m, { sock, args: rawArgs }) {
     if (!action) {
         return m.reply(
             `🎉 *ɢɪᴠᴇᴀᴡᴀʏ sʏsᴛᴇᴍ*\n\n` +
-            `╭┈┈⬡「 📋 *ᴄᴏᴍᴍᴀɴᴅs* 」\n` +
+            `╭┈┈⬡「 ✦ *ᴄᴏᴍᴍᴀɴᴅs* 」\n` +
             `┃ 🎁 \`${prefix}giveaway start\`\n` +
             `┃    _Buat giveaway (private only)_\n` +
             `┃\n` +
             `┃ 🎫 \`${prefix}giveaway join <id>\`\n` +
             `┃    _Ikut giveaway_\n` +
             `┃\n` +
-            `┃ 📋 \`${prefix}giveaway list\`\n` +
+            `┃ 🎯 \`${prefix}giveaway list\`\n` +
             `┃    _Lihat giveaway aktif_\n` +
             `┃\n` +
             `┃ 🏁 \`${prefix}giveaway end <id>\`\n` +
@@ -522,7 +527,7 @@ async function handler(m, { sock, args: rawArgs }) {
             
             await sock.sendMessage(m.chat, {
                 text: `🎉 *ᴘɪʟɪʜ ɢʀᴜᴘ ᴜɴᴛᴜᴋ ɢɪᴠᴇᴀᴡᴀʏ*\n\n` +
-                      `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+                      `╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ* 」\n` +
                       `┃ 🎁 ᴛɪᴛʟᴇ: \`${title}\`\n` +
                       `┃ 🏆 ʜᴀᴅɪᴀʜ: *${prizeName}*\n` +
                       `┃ 👥 ᴘᴇᴍᴇɴᴀɴɢ: \`${winners} orang\`\n` +
@@ -551,7 +556,7 @@ async function handler(m, { sock, args: rawArgs }) {
                     {
                         name: 'single_select',
                         buttonParamsJson: JSON.stringify({
-                            title: '🏠 Pilih Grup Target',
+                            title: '🔮 Pilih Grup Target',
                             sections: [{
                                 title: 'Daftar Grup',
                                 rows: groupRows
@@ -614,7 +619,7 @@ async function handler(m, { sock, args: rawArgs }) {
                 m.react('✅')
                 return m.reply(
                     `✅ *ʙᴇʀʜᴀsɪʟ ɪᴋᴜᴛ!*\n\n` +
-                    `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+                    `╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ* 」\n` +
                     `┃ 🎁 ᴛɪᴛʟᴇ: \`${ga.title}\`\n` +
                     `┃ 🏆 ʜᴀᴅɪᴀʜ: \`${ga.prize}\`\n` +
                     `┃ 👤 ᴘᴇsᴇʀᴛᴀ ᴋᴇ: \`${ga.participants.length}\`\n` +
@@ -673,7 +678,7 @@ async function handler(m, { sock, args: rawArgs }) {
         m.react('✅')
         return m.reply(
             `✅ *ʙᴇʀʜᴀsɪʟ ɪᴋᴜᴛ!*\n\n` +
-            `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+            `╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ* 」\n` +
             `┃ 🎁 ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
             `┃ 🏆 ʜᴀᴅɪᴀʜ: \`${giveaway.prize}\`\n` +
             `┃ 👤 ᴘᴇsᴇʀᴛᴀ ᴋᴇ: \`${giveaway.participants.length}\`\n` +
@@ -693,13 +698,13 @@ async function handler(m, { sock, args: rawArgs }) {
         
         if (activeGiveaways.length === 0) {
             return m.reply(
-                `📋 *ᴅᴀꜰᴛᴀʀ ɢɪᴠᴇᴀᴡᴀʏ*\n\n` +
+                `🌌 *ᴅᴀꜰᴛᴀʀ ɢɪᴠᴇᴀᴡᴀʏ*\n\n` +
                 `> Tidak ada giveaway aktif di grup ini.\n\n` +
                 `> Buat baru: \`${prefix}giveaway start\` (di private)`
             )
         }
         
-        let text = `📋 *ᴅᴀꜰᴛᴀʀ ɢɪᴠᴇᴀᴡᴀʏ ᴀᴋᴛɪꜰ*\n\n`
+        let text = `🌌 *ᴅᴀꜰᴛᴀʀ ɢɪᴠᴇᴀᴡᴀʏ ᴀᴋᴛɪꜰ*\n\n`
         
         activeGiveaways.forEach((g, i) => {
             const remaining = formatDuration(g.endTime - Date.now())
@@ -797,7 +802,7 @@ async function handler(m, { sock, args: rawArgs }) {
                 await sock.sendMessage(giveaway.adminJid, {
                     text: `🎲 *ʀᴇʀᴏʟʟ ɢɪᴠᴇᴀᴡᴀʏ*\n\n` +
                         `> Pemenang telah di-reroll!\n\n` +
-                        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+                        `╭┈┈⬡「 ✦ *ᴅᴇᴛᴀɪʟ* 」\n` +
                         `┃ 🎁 ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
                         `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
                         `╰┈┈⬡\n\n` +
@@ -873,4 +878,4 @@ async function startGiveawayChecker(sock) {
     })
 }
 
-export { pluginConfig as config, handler, startGiveawayChecker }
+export { pluginConfig as config, handler, startGiveawayChecker } 

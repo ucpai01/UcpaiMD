@@ -157,7 +157,7 @@ async function handler(m, { sock, db }) {
 
     const excludeCategories = modeExcludeMap[botMode] || modeExcludeMap.md;
 
-    let txt = `📂 *${toMonoUpperBold("DAFTAR KATEGORI")}*\n\n`;
+    let txt = `🌌 *${toMonoUpperBold("DAFTAR KATEGORI")}*\n\n`;
     txt += `> Ketik \`${prefix}menucat <kategori>\`\n\n`;
 
     const categoryOrder = [
@@ -206,12 +206,12 @@ async function handler(m, { sock, db }) {
       return total > 0;
     });
 
-    txt += `╭─〔 📋 *KATEGORI* 〕───⬣\n`;
+    txt += `╭─〔 ✦ *KATEGORI* 〕───⬣\n`;
     for (const cat of visibleCats) {
       const pluginCmds = commandsByCategory[cat] || [];
       const caseCmds = casesByCategory[cat] || [];
       const totalCmds = pluginCmds.length + caseCmds.length;
-      const emoji = CATEGORY_EMOJIS[cat] || "📁";
+      const emoji = CATEGORY_EMOJIS[cat] || "✨";
       txt += ` │ ${emoji} ${cat.toUpperCase()} │ \`${totalCmds}\` cmds\n`;
     }
     txt += `╰───────⬣\n\n`;
@@ -268,7 +268,7 @@ async function handler(m, { sock, db }) {
             const total =
               (commandsByCategory[cat] || []).length +
               (casesByCategory[cat] || []).length;
-            const emoji = CATEGORY_EMOJIS[cat] || "📁";
+            const emoji = CATEGORY_EMOJIS[cat] || "✨";
             return {
               title: `${emoji} ${cat.toUpperCase()}`,
               description: `${total} commands`,
@@ -279,14 +279,14 @@ async function handler(m, { sock, db }) {
             {
               name: "single_select",
               buttonParamsJson: JSON.stringify({
-                title: "📂 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
-                sections: [{ title: "📋 PILIH KATEGORI", rows: catRows }],
+                title: "🔮 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
+                sections: [{ title: "✦ ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ ✦", rows: catRows }],
               }),
             },
             {
               name: "quick_reply",
               buttonParamsJson: JSON.stringify({
-                display_text: "🏠 ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
+                display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
                 id: `${prefix}menu`,
               }),
             },
@@ -311,7 +311,7 @@ async function handler(m, { sock, db }) {
                         }),
                       header:
                         proto.Message.InteractiveMessage.Header.fromObject({
-                          title: "📂 Daftar Kategori",
+                          title: "🌌 ᴅᴀꜰᴛᴀʀ ᴋᴀᴛᴇɢᴏʀɪ",
                           subtitle: `${visibleCats.length} kategori`,
                           hasMediaAttachment: false,
                         }),
@@ -387,7 +387,7 @@ async function handler(m, { sock, db }) {
     );
   }
 
-  const emoji = CATEGORY_EMOJIS[matchedCat] || "📁";
+  const emoji = CATEGORY_EMOJIS[matchedCat] || "✨";
 
   let txt = `╭─〔 ${emoji} *${matchedCat.toUpperCase()}* 〕───⬣\n`;
   for (const cmd of allCommands) {
@@ -476,14 +476,14 @@ async function handler(m, { sock, db }) {
           {
             name: "quick_reply",
             buttonParamsJson: JSON.stringify({
-              display_text: "📂 ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴋᴀᴛᴇɢᴏʀɪ",
+              display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴋᴀᴛᴇɢᴏʀɪ",
               id: `${prefix}menucat`,
             }),
           },
           {
             name: "quick_reply",
             buttonParamsJson: JSON.stringify({
-              display_text: "🏠 ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
+              display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
               id: `${prefix}menu`,
             }),
           },

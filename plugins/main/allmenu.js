@@ -363,14 +363,14 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
           {
             name: "single_select",
             buttonParamsJson: JSON.stringify({
-              title: "📁 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
-              sections: [{ title: "📋 PILIH KATEGORI", rows: categoryRows }],
+              title: "🪐 ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ",
+              sections: [{ title: "✦ ᴘɪʟɪʜ ᴋᴀᴛᴇɢᴏʀɪ ✦", rows: categoryRows }],
             }),
           },
           {
             name: "quick_reply",
             buttonParamsJson: JSON.stringify({
-              display_text: "🏠 ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
+              display_text: "↩️ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ",
               id: `${prefix}menu`,
             }),
           },

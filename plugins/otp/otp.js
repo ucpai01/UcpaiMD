@@ -62,7 +62,7 @@ async function handler(m, { sock }) {
         let txt = `📱 *ʟᴀʏᴀɴᴀɴ ᴏᴛᴘ ᴏᴛᴏᴍᴀᴛɪs*\n\n`
         txt += `Halo *${m.pushName}*! 👋\n\n`
         txt += `Selamat datang di layanan OTP otomatis. Layanan ini memungkinkan kamu menerima kode verifikasi (OTP) dari berbagai platform seperti WhatsApp, Telegram, Facebook, dan lainnya.\n\n`
-        txt += `╭┈┈⬡「 📋 *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ* 」\n`
+        txt += `╭┈┈⬡「 ✦ *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ* 」\n`
         txt += `┃ 1️⃣ Pilih negara tujuan\n`
         txt += `┃ 2️⃣ Pilih layanan (WhatsApp, Telegram, dll)\n`
         txt += `┃ 3️⃣ Pilih operator\n`
@@ -122,7 +122,7 @@ async function handler(m, { sock }) {
                 {
                     name: 'quick_reply',
                     buttonParamsJson: JSON.stringify({
-                        display_text: '📋 ʀɪᴡᴀʏᴀᴛ ᴏᴛᴘ',
+                        display_text: '🌌 ʀɪᴡᴀʏᴀᴛ ᴏᴛᴘ',
                         id: `${m.prefix}myotp`
                     })
                 }

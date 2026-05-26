@@ -51,7 +51,7 @@ async function handler(m, { sock }) {
                         {
                             name: 'cta_copy',
                             buttonParamsJson: JSON.stringify({
-                                display_text: '📋 Copy Link',
+                                display_text: '✦ Copy Link',
                                 copy_code: shortUrl
                             })
                         }

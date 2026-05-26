@@ -33,7 +33,7 @@ async function handler(m, { sock }) {
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     
     if (myOrders.length === 0) {
-        const emptyTxt = `📋 *ᴏʀᴅᴇʀ ᴋᴀᴍᴜ*\n\n` +
+        const emptyTxt = `🌌 *ᴏʀᴅᴇʀ ᴋᴀᴍᴜ*\n\n` +
             `> Belum ada order!\n\n` +
             `> Lihat produk untuk mulai belanja`
         
@@ -73,7 +73,7 @@ async function handler(m, { sock }) {
         cancelled: 'Dibatalkan'
     }
     
-    let txt = `📋 *ᴏʀᴅᴇʀ ᴋᴀᴍᴜ*\n\n`
+    let txt = `🌌 *ᴏʀᴅᴇʀ ᴋᴀᴍᴜ*\n\n`
     txt += `> Total: *${myOrders.length}* order\n`
     txt += `━━━━━━━━━━━━━━━\n\n`
     
@@ -85,7 +85,7 @@ async function handler(m, { sock }) {
         txt += `${icon} *${order.orderId}*\n`
         txt += `   📦 ${items}\n`
         txt += `   💰 Rp ${order.total.toLocaleString('id-ID')}\n`
-        txt += `   📊 ${label}\n\n`
+        txt += `   💫 ${label}\n\n`
     })
     
     if (myOrders.length > 10) {
@@ -107,7 +107,7 @@ async function handler(m, { sock }) {
         interactiveButtons.unshift({
             name: 'cta_copy',
             buttonParamsJson: JSON.stringify({
-                display_text: '📋 ᴄᴏᴘʏ ᴏʀᴅᴇʀ ɪᴅ',
+                display_text: '✦ ᴄᴏᴘʏ ᴏʀᴅᴇʀ ɪᴅ',
                 copy_code: pendingOrder.orderId
             })
         })
@@ -122,7 +122,7 @@ async function handler(m, { sock }) {
         text: txt.trim(),
         contextInfo: thumbnail ? {
             externalAdReply: {
-                title: '📋 Order Saya',
+                title: '🌌 Order Saya',
                 body: 'Riwayat pesanan kamu',
                 thumbnail,
                 mediaType: 1,

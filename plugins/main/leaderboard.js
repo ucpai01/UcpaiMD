@@ -71,7 +71,7 @@ async function handler(m, { sock }) {
     }
     
     if (users.length === 0) {
-        return m.reply(`📊 *ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ*\n\n> Belum ada data user terdaftar di database.`)
+        return m.reply(`💫 *ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ*\n\n> Belum ada data user terdaftar di database.`)
     }
     
     const senderJid = m.sender.replace('@s.whatsapp.net', '')
@@ -110,7 +110,7 @@ async function handler(m, { sock }) {
                     {
                         name: 'quick_reply',
                         buttonParamsJson: JSON.stringify({
-                            display_text: '⚡ Top Energi',
+                            display_text: '🚀 Top Energi',
                             id: `${m.prefix}topenergi`
                         })
                     }
@@ -136,7 +136,7 @@ async function handler(m, { sock }) {
         formatValue = (u) => `Lv. ${u.level} (${formatNumber(u.exp)} XP)`
     } else if (type === 'energi') {
         title = 'TOP GLOBAL ENERGI'
-        emoji = '⚡'
+        emoji = '🚀'
         field = 'energi'
         formatValue = (u) => `${formatNumber(u.energi)} Energi`
     }

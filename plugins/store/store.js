@@ -117,7 +117,7 @@ async function handler(m, { sock, config }) {
             {
                 name: 'quick_reply',
                 buttonParamsJson: JSON.stringify({
-                    display_text: '📊 ᴄᴇᴋ sᴛᴏᴋ',
+                    display_text: '💫 ᴄᴇᴋ sᴛᴏᴋ',
                     id: `${m.prefix}products`
                 })
             }

@@ -82,7 +82,7 @@ async function handler(m, { sock, db, uptime, config: botConfig }) {
             m,
             {
                 language: 'json',
-                title: '📊 Berikut ini adalah statistik dari bot kami',
+                title: '💫 Berikut ini adalah statistik dari bot kami',
                 footer: botConfig?.bot?.name
             }
         )

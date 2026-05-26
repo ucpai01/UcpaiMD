@@ -53,7 +53,7 @@ async function handler(m, { sock, args }) {
                     {
                         name: 'quick_reply',
                         buttonParamsJson: JSON.stringify({
-                            display_text: '📊 Status',
+                            display_text: '💫 Status',
                             id: `${m.prefix}autoanimewinbu status`
                         })
                     },
@@ -226,7 +226,7 @@ async function handler(m, { sock, args }) {
                     {
                         name: 'quick_reply',
                         buttonParamsJson: JSON.stringify({
-                            display_text: '📊 Status',
+                            display_text: '💫 Status',
                             id: `${m.prefix}autoanimewinbu status`
                         })
                     }

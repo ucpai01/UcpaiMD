@@ -34,7 +34,7 @@ async function handler(m, { sock }) {
     const message = 
         `⭐ *ᴀᴘᴀ ɪᴛᴜ ᴘʀᴇᴍɪᴜᴍ?*\n\n` +
         `Premium adalah *user berbayar* yang mendapatkan akses ke fitur eksklusif dan keuntungan lebih.\n\n` +
-        `╭┈┈⬡「 💎 *ᴋᴇᴜɴᴛᴜɴɢᴀɴ ᴘʀᴇᴍɪᴜᴍ* 」\n` +
+        `╭┈┈⬡「 ⭐ *ᴋᴇᴜɴᴛᴜɴɢᴀɴ ᴘʀᴇᴍɪᴜᴍ* 」\n` +
         `┃ ✦ \`\`\`Limit harian: ${premiumLimit}x (vs ${defaultLimit}x user biasa)\`\`\`\n` +
         `┃ ✦ \`\`\`Cooldown lebih rendah\`\`\`\n` +
         `┃ ✦ \`\`\`Akses fitur eksklusif\`\`\`\n` +
@@ -48,7 +48,7 @@ async function handler(m, { sock }) {
         `┃ • \`\`\`${config.command?.prefix || '.'}addprem <nomor> <durasi>\`\`\`\n` +
         `┃ • Contoh: .addprem 628xxx 30d\n` +
         `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴀꜰᴛᴀʀ ᴄᴏᴍᴍᴀɴᴅ ᴘʀᴇᴍɪᴜᴍ* 」\n` +
+        `╭┈┈⬡「 🌌 *ᴅᴀꜰᴛᴀʀ ᴄᴏᴍᴍᴀɴᴅ ᴘʀᴇᴍɪᴜᴍ* 」\n` +
         `┃ \`Total: ${totalCommands} command\`\n` +
         `┃\n` +
         (totalCommands > 0 

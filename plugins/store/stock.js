@@ -62,7 +62,7 @@ async function handler(m, { sock }) {
             {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                    title: '📋 ʟɪʜᴀᴛ sᴛᴏᴄᴋ',
+                    title: '🌟 ʟɪʜᴀᴛ sᴛᴏᴄᴋ',
                     sections: [{
                         title: 'ᴘɪʟɪʜ ᴘʀᴏᴅᴜᴋ',
                         rows: stockRows

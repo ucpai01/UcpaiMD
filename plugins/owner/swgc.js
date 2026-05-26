@@ -200,7 +200,7 @@ async function handler(m, { sock, db }) {
         } catch (e) {}
         
         await sock.sendMessage(m.chat, {
-            text: `📋 *ᴘɪʟɪʜ ɢʀᴜᴘ ᴜɴᴛᴜᴋ ᴘᴏsᴛ sᴛᴏʀʏ*\n\n` +
+            text: `✦ *ᴘɪʟɪʜ ɢʀᴜᴘ ᴜɴᴛᴜᴋ ᴘᴏsᴛ sᴛᴏʀʏ*\n\n` +
                   `> Media: *${mediaType}*\n` +
                   `> Total Grup: *${groupList.length}*\n\n` +
                   `_Pilih grup dari daftar di bawah:_`,
@@ -225,7 +225,7 @@ async function handler(m, { sock, db }) {
                 {
                     name: 'single_select',
                     buttonParamsJson: JSON.stringify({
-                        title: '🏠 Pilih Grup',
+                        title: '🔮 Pilih Grup',
                         sections: [{
                             title: 'Daftar Grup',
                             rows: groupRows

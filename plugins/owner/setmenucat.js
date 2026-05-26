@@ -56,7 +56,7 @@ async function handler(m, { sock, db }) {
     }))
 
     const bodyText =
-        `📂 *sᴇᴛ ᴍᴇɴᴜᴄᴀᴛ ᴠᴀʀɪᴀɴᴛ*\n\n` +
+        `🔮 *sᴇᴛ ᴍᴇɴᴜᴄᴀᴛ ᴠᴀʀɪᴀɴᴛ*\n\n` +
         `> Variant aktif: *V${current}*\n` +
         `> _${VARIANTS[`v${current}`]?.name || 'Unknown'}_\n\n` +
         `> Pilih variant dari daftar di bawah`
@@ -66,7 +66,7 @@ async function handler(m, { sock, db }) {
             {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                    title: '📂 ᴘɪʟɪʜ ᴠᴀʀɪᴀɴᴛ',
+                    title: '🔮 ᴘɪʟɪʜ ᴠᴀʀɪᴀɴᴛ',
                     sections: [{
                         title: 'ᴅᴀꜰᴛᴀʀ ᴠᴀʀɪᴀɴᴛ ᴍᴇɴᴜᴄᴀᴛ',
                         rows
@@ -90,7 +90,7 @@ async function handler(m, { sock, db }) {
                             text: config.bot?.name || 'Ucpai-AI'
                         }),
                         header: proto.Message.InteractiveMessage.Header.fromObject({
-                            title: '📂 MenuCat Variant',
+                            title: '🔮 MenuCat Variant',
                             subtitle: `${Object.keys(VARIANTS).length} variant tersedia`,
                             hasMediaAttachment: false
                         }),
@@ -114,7 +114,7 @@ async function handler(m, { sock, db }) {
 
         await sock.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
     } catch {
-        let txt = `📂 *sᴇᴛ ᴍᴇɴᴜᴄᴀᴛ ᴠᴀʀɪᴀɴᴛ*\n\n`
+        let txt = `🔮 *sᴇᴛ ᴍᴇɴᴜᴄᴀᴛ ᴠᴀʀɪᴀɴᴛ*\n\n`
         txt += `> Variant saat ini: *V${current}*\n\n`
         for (const [key, val] of Object.entries(VARIANTS)) {
             const mark = val.id === current ? ' ✓' : ''

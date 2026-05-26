@@ -340,14 +340,14 @@ async function handler(m, { sock }) {
         {
           name: "cta_copy",
           buttonParamsJson: JSON.stringify({
-            display_text: "📋 Copy Username",
+            display_text: "✦ Copy Username",
             copy_code: username,
           }),
         },
         {
           name: "cta_copy",
           buttonParamsJson: JSON.stringify({
-            display_text: "📋 Copy Password",
+            display_text: "✦ Copy Password",
             copy_code: password,
           }),
         },

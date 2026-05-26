@@ -45,7 +45,7 @@ async function handler(m, { sock }) {
         `┃ • \`\`\`${config.command?.prefix || '.'}addowner <nomor>\`\`\`\n` +
         `┃ • Atau langsung di config.js\n` +
         `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴀꜰᴛᴀʀ ᴄᴏᴍᴍᴀɴᴅ ᴏᴡɴᴇʀ* 」\n` +
+        `╭┈┈⬡「 🌌 *ᴅᴀꜰᴛᴀʀ ᴄᴏᴍᴍᴀɴᴅ ᴏᴡɴᴇʀ* 」\n` +
         `┃ \`Total: ${totalCommands} command\`\n` +
         `┃\n` +
         commandList.map(cmd => `┃ ${cmd}`).join('\n') +
