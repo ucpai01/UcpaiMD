@@ -878,4 +878,4 @@ async function startGiveawayChecker(sock) {
     })
 }
 
-export { pluginConfig as config, handler, startGiveawayChecker } 
+export { pluginConfig as config, handler, startGiveawayChecker }

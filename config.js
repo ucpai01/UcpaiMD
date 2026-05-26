@@ -15,7 +15,7 @@ const config = {
     },
 
     session: {
-        pairingNumber: 'YOUR_OWNER_NUMBER',   // Nomor WA yang akan di-pair
+        pairingNumber: 'YOUR_PAIRING_NUMBER',   // Nomor WA yang akan di-pair
         usePairingCode: true // true = Pairing Code, false = QR Code
     },
 
@@ -458,4 +458,4 @@ config.setBotNumber = setBotNumber
 config.isSelf = isSelf
 
 export default config;
-export { config, getConfig, isOwner, isPartner, isPremium, isBanned, setBotNumber, isSelf };      
+export { config, getConfig, isOwner, isPartner, isPremium, isBanned, setBotNumber, isSelf };

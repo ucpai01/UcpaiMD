@@ -2674,4 +2674,3 @@ export default {
   config: pluginConfig,
   handler,
 };
-        

@@ -558,4 +558,3 @@ async function handler(m, { sock, db }) {
 }
 
 export { pluginConfig as config, handler };
-                        
