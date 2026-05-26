@@ -243,58 +243,149 @@ async function startConnection(options = {}) {
   extendSocket(sock);
 
   if (usePairingCode && !sock.authState.creds.registered) {
-    let phoneNumber = pairingNumber;
+    // Tentukan nomor default: pairingNumber → owner.number → kosong
+    const ownerNumbers = config.owner?.number || [];
+    const defaultNumber = pairingNumber || (ownerNumbers.length > 0 ? ownerNumbers[0] : "");
 
-    if (!phoneNumber || phoneNumber === "") {
-      console.log("");
-      colors.logger.warn("pairing", "nomor pairing belum diatur di config");
-      console.log("");
+    // Banner super bagus
+    console.log("");
+    console.log(
+      colors.chalk.hex("#FF6B6B")("  ╔══════════════════════════════════════════╗")
+    );
+    console.log(
+      colors.chalk.hex("#FF6B6B")("  ║") +
+      colors.chalk.hex("#FFD93D").bold("  🔮 UCPAI PAIRING SYSTEM                ") +
+      colors.chalk.hex("#FF6B6B")("║")
+    );
+    console.log(
+      colors.chalk.hex("#FF6B6B")("  ╠══════════════════════════════════════════╣")
+    );
+    console.log(
+      colors.chalk.hex("#FF6B6B")("  ║") +
+      colors.chalk.hex("#C8E6C9")("  📱 Masukkan nomor WhatsApp kamu         ") +
+      colors.chalk.hex("#FF6B6B")("║")
+    );
+    console.log(
+      colors.chalk.hex("#FF6B6B")("  ║") +
+      colors.chalk.hex("#C8E6C9")("     Format: 628xxxxxxxxxx               ") +
+      colors.chalk.hex("#FF6B6B")("║")
+    );
+    if (defaultNumber) {
+      console.log(
+        colors.chalk.hex("#FF6B6B")("  ║") +
+        colors.chalk.hex("#C8E6C9")("                                         ") +
+        colors.chalk.hex("#FF6B6B")("║")
+      );
+      console.log(
+        colors.chalk.hex("#FF6B6B")("  ║") +
+        colors.chalk.hex("#81D4FA")("  ⚡ Tekan Enter = gunakan ") +
+        colors.chalk.hex("#FFD93D").bold(defaultNumber) +
+        "  ".repeat(Math.max(0, 5 - defaultNumber.length)) +
+        colors.chalk.hex("#FF6B6B")("║")
+      );
     }
+    console.log(
+      colors.chalk.hex("#FF6B6B")("  ╚══════════════════════════════════════════╝")
+    );
+    console.log("");
 
-    // Selalu tanya nomor di terminal supaya user bisa kirim nomor langsung
-    phoneNumber = await askQuestion(
-      colors.chalk.cyan(
-        `📱 Masukkan nomor WhatsApp (contoh: 6281234567890)` +
-        (pairingNumber ? ` [Enter = ${pairingNumber}]` : "") + `: `
-      ),
+    // Tanya nomor
+    let phoneNumber = await askQuestion(
+      colors.chalk.hex("#81D4FA").bold("  📱 Nomor WA » ")
     );
 
-    // Kalo user langsung tekan Enter, pake nomor dari config
+    // Kalo user langsung tekan Enter, pake nomor default
     if (!phoneNumber || phoneNumber.trim() === "") {
-      phoneNumber = pairingNumber;
+      phoneNumber = defaultNumber;
     }
 
     if (!phoneNumber || phoneNumber === "") {
-      colors.logger.error("pairing", "nomor belum dimasukkan, bot tidak bisa meminta pairing code");
+      console.log("");
+      console.log(
+        colors.chalk.hex("#FF6B6B").bold("  ❌ Nomor belum dimasukkan! Bot tidak bisa meminta pairing code.")
+      );
+      console.log("");
       return;
     }
 
     phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
 
-    colors.logger.info("pairing", `meminta kode untuk ${phoneNumber}`);
+    console.log("");
+    console.log(
+      colors.chalk.hex("#81D4FA")(`  🔄 Meminta pairing code untuk ${phoneNumber}...`)
+    );
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 3000));
       const code = await sock.requestPairingCode(phoneNumber, "UCPAIDAI");
+
+      // Tampilin pairing code super bagus
+      const formattedCode = code.match(/.{1,4}/g)?.join("-") || code;
       console.log("");
       console.log(
-        colors.createBanner(
-          [
-            "",
-            "   PAIRING CODE   ",
-            "",
-            `   ${colors.chalk.bold(colors.chalk.greenBright(code))}   `,
-            "",
-            "  Masukkan kode ini di WhatsApp  ",
-            "  Settings > Linked Devices > Link a Device  ",
-            "",
-          ],
-          "green",
-        ),
+        colors.chalk.hex("#4ECDC4")("  ╔══════════════════════════════════════════╗")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#FFD93D").bold("  ✅ PAIRING CODE BERHASIL!              ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ╠══════════════════════════════════════════╣")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#FFFFFF")("                                         ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#FFD93D").bold(`     ${formattedCode}                          `).slice(0, 43) +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#FFFFFF")("                                         ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ╠══════════════════════════════════════════╣")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#C8E6C9")("  📲 Cara masukin kode:                   ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#C8E6C9")("  1. Buka WhatsApp                       ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#C8E6C9")("  2. Settings > Linked Devices            ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#C8E6C9")("  3. Link a Device                        ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ║") +
+        colors.chalk.hex("#C8E6C9")("  4. Masukin kode di atas                ") +
+        colors.chalk.hex("#4ECDC4")("║")
+      );
+      console.log(
+        colors.chalk.hex("#4ECDC4")("  ╚══════════════════════════════════════════╝")
       );
       console.log("");
     } catch (error) {
-      colors.logger.error("pairing", `gagal: ${error.message}`);
+      console.log("");
+      console.log(
+        colors.chalk.hex("#FF6B6B").bold(`  ❌ Gagal meminta pairing code: ${error.message}`)
+      );
+      console.log("");
     }
   }
 

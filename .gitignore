@@ -5,3 +5,4 @@ storage/
 package-lock.json
 *.log
 config.js.bak
+*.bak

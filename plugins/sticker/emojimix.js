@@ -41,7 +41,7 @@ async function handler(m, { sock }) {
     m.react('🕕')
     
     try {
-        const apiUrl = `https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`
+        const apiUrl = `https://tenor.googleapis.com/v2/featured?key=YOUR_TENOR_API_KEY&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`
         
         const data = await f(apiUrl)
         

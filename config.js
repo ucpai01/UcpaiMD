@@ -11,11 +11,11 @@ const config = {
 
     owner: {
         name: 'mr.ucup',                    // Nama owner
-        number: ['6287892614294']         // Format: 628xxx (tanpa + atau 0)
+        number: ['YOUR_OWNER_NUMBER']         // Format: 628xxx (tanpa + atau 0)
     },
 
     session: {
-        pairingNumber: '6287892614294',   // Nomor WA yang akan di-pair
+        pairingNumber: 'YOUR_OWNER_NUMBER',   // Nomor WA yang akan di-pair
         usePairingCode: true // true = Pairing Code, false = QR Code
     },
 
@@ -248,15 +248,15 @@ const config = {
     //  APIkey
     APIkey: {
         // kalian bisa daftar di https://api.lolhuman.xyz, lalu ambil apikeynya
-        lolhuman: 'YOUR_LOLHUMAN_API_KEY_HERE',
+        lolhuman: 'YOUR_LOLHUMAN_API_KEY',
         // kalian bisa daftar di https://api.neoxr.eu, lalu ambil apikeynya
-        neoxr: 'YOUR_NEOXR_API_KEY_HERE',
-        fgsi: 'YOUR_FGSI_API_KEY_HERE',
-        google: 'YOUR_GOOGLE_API_KEY_HERE',
-        groq: 'YOUR_GROQ_API_KEY_HERE',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
-        betabotz: 'YOUR_BETABOTZ_API_KEY_HERE',
+        neoxr: 'YOUR_NEOXR_API_KEY',
+        fgsi: 'YOUR_FGSI_API_KEY',
+        google: 'YOUR_GOOGLE_API_KEY',
+        groq: 'YOUR_GROQ_API_KEY',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
+        betabotz: 'YOUR_BETABOTZ_API_KEY',
         // kalian bisa daftar di https://covenant.sbs, dan ambil apikeynya
-        covenant: 'YOUR_COVENANT_API_KEY_HERE'
+        covenant: 'YOUR_COVENANT_API_KEY'
     }
 }
 
@@ -458,4 +458,4 @@ config.setBotNumber = setBotNumber
 config.isSelf = isSelf
 
 export default config;
-export { config, getConfig, isOwner, isPartner, isPremium, isBanned, setBotNumber, isSelf };
+export { config, getConfig, isOwner, isPartner, isPremium, isBanned, setBotNumber, isSelf };      
