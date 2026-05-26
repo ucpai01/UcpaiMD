@@ -245,15 +245,19 @@ async function startConnection(options = {}) {
   if (usePairingCode && !sock.authState.creds.registered) {
     let phoneNumber = pairingNumber;
 
+    // Fallback: gunakan nomor owner dari config jika pairingNumber kosong
     if (!phoneNumber || phoneNumber === "") {
-      console.log("");
-      colors.logger.warn("pairing", "nomor pairing belum diatur di config");
-      console.log("");
-      phoneNumber = await askQuestion(
-        colors.chalk.cyan(
-          "📱 Masukkan nomor WhatsApp (contoh: 6281234567890): ",
-        ),
-      );
+      const ownerNumbers = config.owner?.number || [];
+      if (ownerNumbers.length > 0) {
+        phoneNumber = ownerNumbers[0];
+        colors.logger.info("pairing", `menggunakan nomor owner: ${phoneNumber}`);
+      }
+    }
+
+    if (!phoneNumber || phoneNumber === "") {
+      colors.logger.error("pairing", "nomor pairing belum diatur di config.js (session.pairingNumber atau owner.number)");
+      colors.logger.error("pairing", "bot tidak bisa meminta pairing code tanpa nomor");
+      return;
     }
 
     phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
