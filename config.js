@@ -11,11 +11,11 @@ const config = {
 
     owner: {
         name: 'mr.ucup',                    // Nama owner
-        number: ['YOUR_OWNER_NUMBER']         // Format: 628xxx (tanpa + atau 0)
+        number: ['6287892614294']         // Format: 628xxx (tanpa + atau 0)
     },
 
     session: {
-        pairingNumber: 'YOUR_OWNER_NUMBER',   // Nomor WA yang akan di-pair
+        pairingNumber: '6287892614294',   // Nomor WA yang akan di-pair
         usePairingCode: true // true = Pairing Code, false = QR Code
     },
 
@@ -79,7 +79,7 @@ const config = {
     },
 
     saluran: {
-        id: 'YOUR_NEWSLETTER_ID@newsletter', // ID saluran (contoh: 120363xxx@newsletter)                          // ID saluran (contoh: 120363xxx@newsletter)
+        id: '120363426403323903@newsletter', // ID saluran (contoh: 120363xxx@newsletter)                          // ID saluran (contoh: 120363xxx@newsletter)
         name: 'WHATSAPP BOT MULTI DEVICE',       // Nama saluran
         link: 'https://whatsapp.com/channel/0029VbCX3Z7Bqbr1g1c1na10'                          // Link saluran
     },
@@ -248,15 +248,15 @@ const config = {
     //  APIkey
     APIkey: {
         // kalian bisa daftar di https://api.lolhuman.xyz, lalu ambil apikeynya
-        lolhuman: 'YOUR_LOLHUMAN_API_KEY',
+        lolhuman: 'YOUR_LOLHUMAN_API_KEY_HERE',
         // kalian bisa daftar di https://api.neoxr.eu, lalu ambil apikeynya
-        neoxr: 'YOUR_NEOXR_API_KEY',
-        fgsi: 'YOUR_FGSI_API_KEY',
-        google: 'YOUR_GOOGLE_API_KEY',
-        groq: 'YOUR_GROQ_API_KEY',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
-        betabotz: 'YOUR_BETABOTZ_API_KEY',
+        neoxr: 'YOUR_NEOXR_API_KEY_HERE',
+        fgsi: 'YOUR_FGSI_API_KEY_HERE',
+        google: 'YOUR_GOOGLE_API_KEY_HERE',
+        groq: 'YOUR_GROQ_API_KEY_HERE',// API Key Groq untuk fitur transkrip (gratis di console.groq.com)
+        betabotz: 'YOUR_BETABOTZ_API_KEY_HERE',
         // kalian bisa daftar di https://covenant.sbs, dan ambil apikeynya
-        covenant: 'YOUR_COVENANT_API_KEY'
+        covenant: 'YOUR_COVENANT_API_KEY_HERE'
     }
 }
 
@@ -458,4 +458,4 @@ config.setBotNumber = setBotNumber
 config.isSelf = isSelf
 
 export default config;
-export { config, getConfig, isOwner, isPartner, isPremium, isBanned, setBotNumber, isSelf };                    
+export { config, getConfig, isOwner, isPartner, isPremium, isBanned, setBotNumber, isSelf };

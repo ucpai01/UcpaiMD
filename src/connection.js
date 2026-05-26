@@ -245,18 +245,27 @@ async function startConnection(options = {}) {
   if (usePairingCode && !sock.authState.creds.registered) {
     let phoneNumber = pairingNumber;
 
-    // Fallback: gunakan nomor owner dari config jika pairingNumber kosong
     if (!phoneNumber || phoneNumber === "") {
-      const ownerNumbers = config.owner?.number || [];
-      if (ownerNumbers.length > 0) {
-        phoneNumber = ownerNumbers[0];
-        colors.logger.info("pairing", `menggunakan nomor owner: ${phoneNumber}`);
-      }
+      console.log("");
+      colors.logger.warn("pairing", "nomor pairing belum diatur di config");
+      console.log("");
+    }
+
+    // Selalu tanya nomor di terminal supaya user bisa kirim nomor langsung
+    phoneNumber = await askQuestion(
+      colors.chalk.cyan(
+        `📱 Masukkan nomor WhatsApp (contoh: 6281234567890)` +
+        (pairingNumber ? ` [Enter = ${pairingNumber}]` : "") + `: `
+      ),
+    );
+
+    // Kalo user langsung tekan Enter, pake nomor dari config
+    if (!phoneNumber || phoneNumber.trim() === "") {
+      phoneNumber = pairingNumber;
     }
 
     if (!phoneNumber || phoneNumber === "") {
-      colors.logger.error("pairing", "nomor pairing belum diatur di config.js (session.pairingNumber atau owner.number)");
-      colors.logger.error("pairing", "bot tidak bisa meminta pairing code tanpa nomor");
+      colors.logger.error("pairing", "nomor belum dimasukkan, bot tidak bisa meminta pairing code");
       return;
     }
 
